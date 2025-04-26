@@ -1,0 +1,131 @@
+---
+const docSections = [
+  { 
+    title: 'Getting Started',
+    items: [
+      { title: 'Introduction', url: '/docs', active: true },
+      { title: 'Installation', url: '/docs/installation' },
+      { title: 'Quick Start', url: '/docs/quick-start' },
+    ]
+  },
+  {
+    title: 'Mechanisms',
+    items: [
+      { title: 'Overview', url: '/docs/mechanisms' },
+      { title: 'Arm Mechanism', url: '/docs/mechanisms/arm' },
+      { title: 'Intake Mechanism', url: '/docs/mechanisms/intake' },
+      { title: 'Shooter Mechanism', url: '/docs/mechanisms/shooter' },
+      { title: 'Elevator Mechanism', url: '/docs/mechanisms/elevator' },
+    ]
+  },
+  {
+    title: 'Swerve Drive',
+    items: [
+      { title: 'Overview', url: '/docs/swerve' },
+      { title: 'SwerveModule Class', url: '/docs/swerve/module' },
+      { title: 'SwerveDrive Class', url: '/docs/swerve/drive' },
+      { title: 'Path Following', url: '/docs/swerve/path-following' },
+      { title: 'Custom Kinematics', url: '/docs/swerve/kinematics' },
+    ]
+  },
+  {
+    title: 'Advanced Features',
+    items: [
+      { title: 'Pose Estimation', url: '/docs/advanced/pose-estimation' },
+      { title: 'Auto-balancing', url: '/docs/advanced/auto-balance' },
+      { title: 'Vision Integration', url: '/docs/advanced/vision' },
+      { title: 'Command-Based Framework', url: '/docs/advanced/command-based' },
+    ]
+  }
+];
+---
+
+<aside class="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-white dark:bg-slate-800 shadow-md z-40 border-r border-slate-200 dark:border-slate-700 md:block hidden overflow-y-auto">
+  <nav class="py-6 px-4">
+    {docSections.map(section => (
+      <div class="mb-6">
+        <h5 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-3">{section.title}</h5>
+        <ul class="space-y-1">
+          {section.items.map(item => (
+            <li>
+              <a 
+                href={item.url} 
+                class={`block px-3 py-2 rounded-md text-sm ${item.active 
+                  ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-900 dark:text-white font-medium' 
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'}`}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>
+
+<button type="button" id="sidebar-toggle" class="md:hidden fixed bottom-4 right-4 z-40 p-3 rounded-full bg-primary-900 text-white shadow-lg">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"></div>
+
+<div id="mobile-sidebar" class="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-white dark:bg-slate-800 shadow-lg z-40 border-r border-slate-200 dark:border-slate-700 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-y-auto">
+  <nav class="py-6 px-4">
+    {docSections.map(section => (
+      <div class="mb-6">
+        <h5 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-3">{section.title}</h5>
+        <ul class="space-y-1">
+          {section.items.map(item => (
+            <li>
+              <a 
+                href={item.url} 
+                class={`block px-3 py-2 rounded-md text-sm ${item.active 
+                  ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-900 dark:text-white font-medium' 
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'}`}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</div>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const mobileSidebar = document.getElementById('mobile-sidebar');
+  const sidebarOverlay = document.getElementById('sidebar-overlay');
+  
+  function closeSidebar() {
+    mobileSidebar?.classList.remove('translate-x-0');
+    mobileSidebar?.classList.add('-translate-x-full');
+    sidebarOverlay?.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+  
+  function openSidebar() {
+    mobileSidebar?.classList.remove('-translate-x-full');
+    mobileSidebar?.classList.add('translate-x-0');
+    sidebarOverlay?.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+  
+  sidebarToggle?.addEventListener('click', () => {
+    if (mobileSidebar?.classList.contains('-translate-x-full')) {
+      openSidebar();
+    } else {
+      closeSidebar();
+    }
+  });
+  
+  sidebarOverlay?.addEventListener('click', closeSidebar);
+  
+  document.querySelectorAll('#mobile-sidebar a').forEach(link => {
+    link.addEventListener('click', closeSidebar);
+  });
+</script>
