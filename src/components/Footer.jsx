@@ -96,7 +96,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
           <p className="text-center text-sm text-slate-500 dark:text-slate-400">
-            &copy; {currentYear} FRCLib. All rights reserved.
+            &copy; {currentYear}  Excalibur FRC. All rights reserved.
           </p>
         </div>
       </div>

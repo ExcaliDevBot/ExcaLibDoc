@@ -7,6 +7,8 @@ import {
   FaRoute, 
   FaRocket
 } from 'react-icons/fa';
+import {TbWheel} from "react-icons/tb";
+import {GiCarWheel} from "react-icons/gi";
 
 const features = [
   {
@@ -15,7 +17,7 @@ const features = [
     description: 'Ready-to-use mechanisms including arms, elevators, intakes, and shooters that can be customized for your robot\'s specific requirements.',
   },
   {
-    icon: <FaDice className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
+    icon: <GiCarWheel className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
     title: 'Custom Swerve Drive',
     description: 'Advanced swerve drive implementation with tunable parameters, optimized for different robot configurations and field conditions.',
   },
@@ -26,7 +28,7 @@ const features = [
   },
   {
     icon: <FaRoute className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
-    title: 'Path Planning',
+    title: 'Additional Utilities',
     description: 'Generate and follow complex autonomous paths with obstacle avoidance and optimal trajectory generation.',
   },
   {
