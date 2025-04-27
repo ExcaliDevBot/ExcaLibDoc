@@ -7,8 +7,10 @@ import {
   FaRoute, 
   FaRocket
 } from 'react-icons/fa';
-import {TbWheel} from "react-icons/tb";
-import {GiCarWheel} from "react-icons/gi";
+import {TbEaseInOutControlPoints, TbWheel} from "react-icons/tb";
+import {GiCartwheel, GiCarWheel} from "react-icons/gi";
+import {LuListPlus} from "react-icons/lu";
+import {PiTreeStructure} from "react-icons/pi";
 
 const features = [
   {
@@ -17,17 +19,17 @@ const features = [
     description: 'Ready-to-use mechanisms including arms, elevators, intakes, and shooters that can be customized for your robot\'s specific requirements.',
   },
   {
-    icon: <GiCarWheel className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
+    icon: <GiCartwheel  className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
     title: 'Custom Swerve Drive',
-    description: 'Advanced swerve drive implementation with tunable parameters, optimized for different robot configurations and field conditions.',
+    description: 'Simple swerve drive implementation with tunable parameters, optimized for different robot configurations and field conditions.',
   },
   {
-    icon: <FaBrain className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
+    icon: <TbEaseInOutControlPoints className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
     title: 'Advanced Controls',
-    description: 'Sophisticated control systems using PID, motion profiling, and feed-forward to ensure precise and smooth movement.',
+    description: 'Control systems using PID and feed-forward gains, motion profiling, to ensure precise and smooth movement.',
   },
   {
-    icon: <FaRoute className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
+    icon: <LuListPlus className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
     title: 'Additional Utilities',
     description: 'Generate and follow complex autonomous paths with obstacle avoidance and optimal trajectory generation.',
   },
@@ -37,9 +39,9 @@ const features = [
     description: 'Built on WPILib\'s command-based programming to provide a structured approach to robot control and automation.',
   },
   {
-    icon: <FaRocket className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
-    title: 'Vision Integration',
-    description: 'Seamless integration with common vision systems for target tracking, field positioning, and game piece detection.',
+    icon: <PiTreeStructure className="h-6 w-6 text-primary-900 dark:text-secondary-500" />,
+    title: 'Generic Structure',
+    description: 'Basic WpiLib structure with a focus on modularity and reusability, allowing teams to easily integrate and adapt components.',
   },
 ];
 

@@ -1,8 +1,8 @@
 export const docContent = {
   "introduction": {
-    title: "Introduction to FRCLib",
+    title: "Introduction to ExcaLib",
     updated: "January 15, 2025",
-    introduction: "FRCLib is a comprehensive Java library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, and advanced control systems to accelerate your robot development.",
+    introduction: "ExcaLib is a comprehensive Java library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hradware wrappers and advanced control systems to accelerate your robot development.",
     sections: [
       {
         id: "overview",
@@ -10,7 +10,7 @@ export const docContent = {
         content: [
           {
             type: "paragraph",
-            text: "FRCLib builds on top of WPILib, the standard library for FRC, adding higher-level abstractions and ready-to-use components that can save your team weeks of development time. Our focus is on creating reusable, well-tested, and well-documented code that can be easily adapted to your team's specific needs."
+            text: "ExcaLib builds on top of WPILib, the standard library for FRC, adding higher-level abstractions and ready-to-use components that can save your team weeks of development time. Our focus is on creating reusable, well-tested, and well-documented code that can be easily adapted to your team's specific needs."
           },
           {
             type: "paragraph",
@@ -26,7 +26,7 @@ export const docContent = {
             type: "list",
             ordered: false,
             items: [
-              "Pre-built mechanism classes for common robot subsystems (arms, elevators, intakes, etc.)",
+              "Pre-built mechanism classes for common robot subsystems (arms, elevators, turrets, etc.)",
               "Complete custom swerve drive implementation with advanced features",
               "Vision processing and integration with common vision systems",
               "Path planning and following for autonomous routines",
