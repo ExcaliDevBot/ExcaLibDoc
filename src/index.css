@@ -153,3 +153,28 @@ body {
 .btn-secondary:hover {
   background-color: var(--secondary-700);
 }
+
+.callout {
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.callout.info {
+  background-color: #e7f3ff;
+  border-left: 4px solid #2196f3;
+  color: #0d47a1;
+}
+
+.callout.warning {
+  background-color: #fff4e5;
+  border-left: 4px solid #ffa726;
+  color: #e65100;
+}
+
+.nav-item.selected {
+  background-color: #f0f0f0; /* Light gray background */
+  color: #000; /* Black text */
+  font-weight: bold; /* Highlight the text */
+  border-left: 4px solid #2196f3; /* Blue border to indicate selection */
+}
