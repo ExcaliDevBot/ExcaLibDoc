@@ -1,7 +1,7 @@
 export const docContent = {
     "introduction": {
         title: "Introduction to ExcaLib",
-        updated: "January 15, 2025",
+        updated: "17.06.2025",
         introduction: "ExcaLib is a comprehensive Java library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hradware wrappers and additional utilities to accelerate your robot development.",
         sections: [
             {
@@ -10,11 +10,13 @@ export const docContent = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "ExcaLib builds on top of WPILib, the standard library for FRC, adding higher-level abstractions and ready-to-use components that can save your team a lot of pre-season preperations and season development time. Our focus is on creating reusable, well-tested, and well-documented code that can be easily adapted to your team's specific needs."
+                        text: "ExcaLib builds on top of WPILib, the standard library for FRC, " +
+                            "adding higher-level abstractions and ready-to-use components that can save your team a lot of pre-season " +
+                            "preperations and season development time. Our focus is on creating reusable and east-to-implement code that can be easily adapted to your team's specific needs."
                     },
                     {
                         type: "paragraph",
-                        text: "The library is designed with a modular architecture, allowing you to use only the components you need without bringing in unnecessary dependencies. This makes it suitable for both rookie teams looking for a quick start and experienced teams looking to leverage advanced features."
+                        text: "This makes it suitable for both rookie teams looking for a quick start and experienced teams looking to leverage advanced features."
                     }
                 ]
             },
@@ -42,7 +44,7 @@ export const docContent = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "FRCLib was built with the following principles in mind:"
+                        text: "ExcaLib was built with the following principles in mind:"
                     },
                     {
                         type: "list",
@@ -68,34 +70,37 @@ export const docContent = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "To get started with FRCLib, check out the following resources:"
+                        text: "To get started with ExcaLib, check out the following resources:"
                     },
                     {
                         type: "list",
                         ordered: false,
                         items: [
-                            "Installation guide: Learn how to add FRCLib to your robot project",
-                            "Quick start guide: Build a basic robot with FRCLib in minutes",
+                            "Installation guide: Learn how to add ExcaLib to your robot project",
+                            "Quick start guide: Build a basic robot with ExcaLib in an hour",
                             "Examples: Explore example code for common robot configurations",
                             "API Reference: Detailed documentation for all FRCLib classes and methods"
                         ]
+                    }
+                ]
+            },
+            {
+                id: "contributors",
+                title: "Contributors",
+                content: [
+                    {
+                        type: "paragraph",
+                        text: "ExcaLib is the result of contributions from a dedicated team members and alumni that are FRC enthusiasts."
                     },
                     {
-                        type: "code",
-                        language: "java",
-                        title: "Basic Usage Example",
-                        code: `// Create a swerve drive controller
-SwerveModuleConfig[] moduleConfigs = new SwerveModuleConfig[] {
-  new SwerveModuleConfig(0, 1, 2, 3, 0.0), // Front Left
-  new SwerveModuleConfig(4, 5, 6, 7, 0.0), // Front Right
-  new SwerveModuleConfig(8, 9, 10, 11, 0.0), // Back Left
-  new SwerveModuleConfig(12, 13, 14, 15, 0.0), // Back Right
-};
-
-SwerveDrive swerveDrive = new SwerveDrive(moduleConfigs);
-
-// Drive the robot
-swerveDrive.drive(xSpeed, ySpeed, rotation, true);`
+                        type: "list",
+                        ordered: false,
+                        items: [
+                            "Yoav Cohen",
+                            "Itay Keller",
+                            "Shai Grossman",
+                            "Yehuda Rothstein"
+                        ]
                     }
                 ]
             }
@@ -216,7 +221,7 @@ public class TestFRCLib {
     "quick-start": {
         title: "Quick Start Guide",
         updated: "January 17, 2025",
-        introduction: "This guide will help you quickly set up a basic robot with FRCLib, focusing on the most common components and features.",
+        introduction: "This guide will help you quickly set up a basic robot with ExcaLib, focusing on the most common components and features.",
         sections: [
             {
                 id: "project-setup",
@@ -224,21 +229,27 @@ public class TestFRCLib {
                 content: [
                     {
                         type: "paragraph",
-                        text: "Start by creating a new robot project using the WPILib VS Code extension or the WPILib New Project Creator. Choose the Command-Based Java template, as FRCLib is designed to work well with the command-based framework."
+                        text: "Start by creating a new robot project using the WPILib VS Code extension. Choose the Command-Based Java template, as ExcaLib is designed to work exclusively with the command-based framework."
                     },
                     {
                         type: "paragraph",
-                        text: "After creating the project, add FRCLib to your build.gradle file as described in the Installation guide."
+                        text: "After creating the project, add ExcaLib to your build.gradle file as described in the Installation guide."
                     }
                 ]
             },
             {
                 id: "robot-container",
-                title: "Setting Up RobotContainer",
+                title: "Setting Up A Subsystem Class",
                 content: [
                     {
                         type: "paragraph",
-                        text: "The RobotContainer class is where you'll configure your robot's subsystems and commands. Here's an example of a basic RobotContainer with a swerve drive subsystem:"
+                        text: "incorporating the ExcaLib mechanisms, requires you to do it threw a subsystem class. " +
+                            "Each subsystem class should extend the `SubsystemBase` class from WPILib and contain the logic for controlling your robot's hardware. " +
+                            "We recommand writing all you motor and control logic in the subsystem class."
+                    },
+                    {
+                        type: "paragraph",
+                        text: "Here's a very basic example of a subsystem representing a simple elevator:"
                     },
                     {
                         type: "code",
@@ -246,115 +257,161 @@ public class TestFRCLib {
                         title: "RobotContainer.java",
                         code: `package frc.robot;
 
-import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.RunCommand;
-import frc.robot.subsystems.DriveSubsystem;
+public class ExampleElevator extends SubsystemBase {
+    LinearExtension elevatorMechanism;
+    TalonFXMotor firstMotor, secondMotor;
+    MotorGroup elevatorMotors;
 
-public class RobotContainer {
-    // Subsystems
-    private final DriveSubsystem driveSubsystem = new DriveSubsystem();
-    
-    // Controllers
-    private final XboxController driverController = new XboxController(0);
-    
-    public RobotContainer() {
-        configureButtonBindings();
-        
-        // Set default commands
-        driveSubsystem.setDefaultCommand(
-            new RunCommand(
-                () -> driveSubsystem.drive(
-                    -driverController.getLeftY(),
-                    -driverController.getLeftX(),
-                    -driverController.getRightX(),
-                    true
-                ),
-                driveSubsystem
-            )
+    public ExampleElevator() {
+        // create two motor controllers, and pass threw the CAN id
+        firstMotor = new TalonFXMotor(FIRST_MOTOR_ID);
+        secondMotor = new TalonFXMotor(SECOND_MOTOR_ID);
+
+
+        // our elevator has two motors,
+        // so for applying fonctions on both motors, we will put them inside a MotorGroup
+        elevatorMotors = new MotorGroup(firstMotor, secondMotor);
+
+        // apply conversion factor - to get the elevators position based on motor position.
+        elevatorMotors.setPositionConversionFactor(ROTATIONS_TO_METERS);
+
+        elevatorMechanism = new LinearExtension(
+         
+                elevatorMotors,// pass threw anything that inherites from Motor.java
+                firstMotor::getMotorPosition, // get the elevator's position
+                // let's say our elevator is straight-up and is not angled
+                () -> Math.PI / 2, 
+                 // later - when we clebrate out elevaotr we will add values (this is a empty constructor)
+                new Gains(),
+                new TrapezoidProfile.Constraints(MAX_VELOCITY, MAX_ACCELERATION), //elevator constraints
+                0.01 // set the elevators position tolerance (meters)
         );
     }
-    
-    private void configureButtonBindings() {
-        // Configure controller button bindings here
+
+    public Command setPositionCommand(double setpoint) {
+        return elevatorMechanism.extendCommand(() -> setpoint, this); // YES - it's that easy!
     }
-    
-    public Command getAutonomousCommand() {
-        // Return the autonomous command
-        return null;
-    }
-}`
+}
+`
                     }
                 ]
             },
             {
                 id: "drive-subsystem",
-                title: "Creating a Drive Subsystem",
+                title: "Creating a Swerve Drive Subsystem",
                 content: [
                     {
                         type: "paragraph",
-                        text: "Now, let's create a drive subsystem using FRCLib's SwerveDrive class:"
+                        text: "Before creating a swerve drive subsystem, lets see how to build to configuration:"
+                    },
+                    {
+                        type: "paragraph",
+                        text: "In your Constants.java (or any other appropriate class)," +
+                            " define all hardware IDs, CAN bus names, PID gains, and geometry for your swerve modules." +
+                            " This includes drive and rotation motor IDs, encoder IDs, translations, and PID constants."
+                    },
+                    {
+                        type: "paragraph",
+                        text: "Each swerve module is constructed with:"
+                    },
+                    {
+                        type: "list",
+                        ordered: false,
+                        items: [
+                            "A drive motor (e.g., TalonFXMotor)",
+                            "A rotation motor (e.g., SparkMaxMotor)",
+                            "PID gains for both drive and rotation",
+                            "A translation (position on the robot)",
+                            "An absolute encoder supplier for module angle",
+                            "Velocity and position conversion factors"
+                        ]
                     },
                     {
                         type: "code",
                         language: "java",
-                        title: "DriveSubsystem.java",
-                        code: `package frc.robot.subsystems;
+                        title: "Constructing a Front Left Swerve Module",
+                        code: 'new SwerveModule(\n' +
+                            '    // (if your team uses a second CAN bus - you can set it in the motor\'s costructor) \n' +
+                            '    new TalonFXMotor(FRONT_LEFT_DRIVE_ID, SWERVE_CANBUS), \n' +
+                            '    new SparkMaxMotor(FRONT_LEFT_ROTATION_ID, SWERVE_CANBUS),\n' +
+                            '    new Gains(...), // drive PID\n' +
+                            '    new Gains(...), // rotation PID\n' +
+                            '    PID_TOLERANCE,\n' +
+                            '    new Translation2d(TRACK_WIDTH / 2, TRACK_WIDTH / 2); \n' +
+                            '    () -> FRONT_LEFT_ABS_ENCODER.getAbsolutePosition().getValueAsDouble() * 2 * Math.PI,\n' +
+                            '    MAX_MODULE_VEL,\n' +
+                            '    VELOCITY_CONVERSION_FACTOR,\n' +
+                            '    POSITION_CONVERSION_FACTOR,\n' +
+                            '    ROTATION_VELOCITY_CONVERSION_FACTOR\n' +
+                            ')'
+                    },
+                    {
+                        type: "paragraph",
+                        text: "To group all swerve modules together, you can create a ModulesHolder object." +
+                            "This object gets four modules and provides methods to control them collectively. "
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import org.frclib.drive.swerve.SwerveDrive;
-import org.frclib.drive.swerve.SwerveModuleConfig;
-import org.frclib.util.PIDConstants;
-
-public class DriveSubsystem extends SubsystemBase {
-    private final SwerveDrive swerveDrive;
-    
-    public DriveSubsystem() {
-        // Create swerve modules
-        SwerveModuleConfig[] moduleConfigs = new SwerveModuleConfig[] {
-            new SwerveModuleConfig(0, 1, 2, 3, 0.0), // Front Left
-            new SwerveModuleConfig(4, 5, 6, 7, 0.0), // Front Right
-            new SwerveModuleConfig(8, 9, 10, 11, 0.0), // Back Left
-            new SwerveModuleConfig(12, 13, 14, 15, 0.0), // Back Right
-        };
-        
-        // Create the swerve drive controller
-        swerveDrive = new SwerveDrive(moduleConfigs);
-        
-        // Optional: Configure path following
-        swerveDrive.configurePathFollowing(
-            new PIDConstants(1.0, 0.0, 0.0), // Translation PID
-            new PIDConstants(1.0, 0.0, 0.0)  // Rotation PID
-        );
-    }
-    
-    /**
-     * Drive the robot
-     * @param xSpeed Forward/backward speed [-1.0, 1.0]
-     * @param ySpeed Left/right speed [-1.0, 1.0]
-     * @param rotation Rotational speed [-1.0, 1.0]
-     * @param fieldRelative Whether to use field-relative control
-     */
-    public void drive(double xSpeed, double ySpeed, double rotation, boolean fieldRelative) {
-        swerveDrive.drive(xSpeed, ySpeed, rotation, fieldRelative);
-    }
-    
-    /**
-     * Stop the drive
-     */
-    public void stop() {
-        swerveDrive.drive(0, 0, 0, true);
-    }
-    
-    @Override
-    public void periodic() {
-        // Any periodic updates the drive system needs
-    }
-}`
+                    },
+                    {
+                        type: "paragraph",
+                        text: "let's create a ModulesHolder object for our swerve drive, so we will pass threw four modules (like the one we created above):"
+                    },
+                    {
+                        type: "code",
+                        language: "java",
+                        title: "Constructing a ModulesHolder",
+                        code: 'new ModulesHolder(\n' +
+                            '       new SwerveModule(\n' +
+                            '           // values of the front left SwerveModule\n' +
+                            '       ),\n' +
+                            '       new SwerveModule(\n' +
+                            '           // values of the front right SwerveModule\n' +
+                            '       ),\n' +
+                            '       new SwerveModule(\n' +
+                            '           // values of the back left SwerveModule\n' +
+                            '       ),\n' +
+                            '       new SwerveModule(\n' +
+                            '           // values of the back right SwerveModule\n' +
+                            '       ),\n' +
+                            ');'
+                    },
+                    {
+                        type: "paragraph",
+                        text: "Finally, constructing swerve subsystem is very simple, you will need to pass threw three arguments :"
+                    },
+                    {
+                        type: "list",
+                        ordered: false,
+                        items: [
+                            "ModulesHolder: The ModulesHolder object containing all swerve modules",
+                            "IMU / Gyro: An IMU or gyro ExcaLib object for orientation (e.g., NavX, Pigeon)",
+                            "Pose2d: The initial pose of the robot on the field, which can be set to (0, 0, 0) if not known"
+                        ]
+                    },
+                    {
+                        type: "paragraph",
+                        text: "Now, let's create a swerve drive subsystem using ExcaLib's Swerve class:"
+                    },
+                    {
+                        type: "code",
+                        language: "java",
+                        title: "SwerveConstants.java",
+                        code: `public static Swerve configureSwerve() {
+            return new Swerve(
+                    new ModulesHolder(/* four modules are set here */),
+                    new Pigeon(GYRO_ID, SWERVE_CANBUS, new Rotation3d()),
+                    new Pose2d() // start from (0,0,0)
+            );
+        }`
+                    },
+                    {
+                        type: "code",
+                        language: "java",
+                        title: "RobotContainer.java",
+                        code: `private final Swerve swerve = Constants.SwerveConstants.configureSwerve();`
                     },
                     {
                         type: "callout",
-                        calloutType: "tip",
+                        calloutType: "warning",
                         title: "Module Configuration",
                         text: "The SwerveModuleConfig constructor takes the drive motor ID, steer motor ID, encoder ID, and offset for each module. Make sure to adjust these values to match your robot's hardware configuration."
                     }
@@ -366,30 +423,38 @@ public class DriveSubsystem extends SubsystemBase {
                 content: [
                     {
                         type: "paragraph",
-                        text: "Now that you have a basic robot with swerve drive set up, you can add more features:"
+                        text: "Now that you have a basic robot swerve in-mind you can try the following:"
                     },
                     {
                         type: "list",
                         ordered: false,
                         items: [
-                            "Add an arm mechanism for game piece manipulation",
-                            "Implement autonomous routines using path following",
-                            "Add vision processing for tracking game elements or AprilTags",
-                            "Implement telemetry and dashboard output"
+                            "Incoporate the DriveCommand into your robot's teleop period",
+                            "Add a joystick or controller to control the swerve drive",
+                            "Implement autonomous commands using the swerve drive"
                         ]
                     },
                     {
+                        type: "callout",
+                        calloutType: "info",
+                        title: "Stuck?",
+                        text: "If you run into any issues or have questions, check out the ExcaLib post on CheifDelphi. The ExcaLib team is always happy to assist teams in getting started and making the most of the library. You can also " +
+                            "visit the corresponding documentation pages for more detailed information on specific features and components so as example projects."
+                    },
+                    {
                         type: "paragraph",
-                        text: "Check out the specific guides for each of these features in the documentation to learn how to implement them with FRCLib."
+                        text: "Check out the specific guides for each of these features in the documentation to learn how to implement them with ExcaLib."
                     }
                 ]
-            }
+            },
+
         ]
     },
     "mechanisms/overview": {
         title: "Mechanisms Overview",
         updated: "January 20, 2025",
-        introduction: "FRCLib provides a comprehensive set of ready-to-use mechanism classes that can be easily adapted to your robot's specific needs. This page provides an overview of the available mechanisms and how to use them.",
+        introduction: "ExcaLib provides a comprehensive set of ready-to-use mechanism classes that can be easily adapted to your robot's specific needs." +
+            " This page provides an overview of the available mechanisms and how to use them.",
         sections: [
             {
                 id: "introduction",
@@ -397,12 +462,20 @@ public class DriveSubsystem extends SubsystemBase {
                 content: [
                     {
                         type: "paragraph",
-                        text: "Mechanisms in FRCLib are high-level abstractions for common robot subsystems. They provide a consistent interface for controlling various types of mechanisms, handling the low-level details of motor control, sensor feedback, and safety features."
+                        text: "Mechanisms in ExcaLib are high-level abstractions for common robot subsystems. " +
+                            "They provide a consistent interface for controlling various types of mechanisms, handling the low-level details of motor control, sensor feedback, and safety features."
                     },
                     {
                         type: "paragraph",
                         text: "Each mechanism class follows a similar pattern, making it easy to learn and use multiple mechanisms once you understand the basic concepts."
+                    },
+                    {
+                        type: "callout",
+                        calloutType: "warning",
+                        title: "Units",
+                        text: "All threw the library we use meters (m) for the distance unit, and radians (rad) for angle measurements. "
                     }
+
                 ]
             },
             {
@@ -411,23 +484,28 @@ public class DriveSubsystem extends SubsystemBase {
                 content: [
                     {
                         type: "paragraph",
-                        text: "FRCLib includes the following mechanism classes:"
+                        text: "ExcaLib includes the following mechanism classes:"
                     },
                     {
                         type: "list",
                         ordered: false,
                         items: [
-                            "ArmMechanism: For controlling single or multi-joint arms",
-                            "ElevatorMechanism: For controlling linear lift mechanisms",
-                            "IntakeMechanism: For controlling intake rollers, with optional deployment",
-                            "ShooterMechanism: For controlling flywheels and related components",
-                            "ClimberMechanism: For controlling climbing mechanisms",
-                            "TurretMechanism: For controlling rotating turrets"
+                            "Arm: For controlling single or multi-joint arms",
+                            "Linear Extension: For controlling linear lift mechanisms",
+                            "FlyWheel: For controlling intake rollers, with optional deployment",
+                            "Turret: For controlling flywheels and related components",
+                            "Mechanism: A generic mechanism class that can be extended for custom mechanisms",
                         ]
                     },
                     {
+                        type: "callout",
+                        calloutType: "tip",
+                        title: "Differential Mechanisms",
+                        text: "We are currently working on adding support for differential mechanisms such as differential elevators. "
+                    },
+                    {
                         type: "paragraph",
-                        text: "Each mechanism supports various motor controllers and sensors, and can be configured using a builder pattern for easy setup."
+                        text: "Each mechanism supports various motor controllers and sensors, and can be easily setup."
                     }
                 ]
             },
@@ -443,13 +521,12 @@ public class DriveSubsystem extends SubsystemBase {
                         type: "list",
                         ordered: false,
                         items: [
-                            "Builder pattern for easy configuration",
                             "Support for multiple motor controller types (TalonFX, SparkMAX, etc.)",
                             "Configurable PID control for precise positioning",
                             "Feed-forward control for improved performance",
                             "Motion profiling for smooth movement",
-                            "Soft limits and hard stops for safety",
-                            "Preset positions for common operations",
+                            "static soft limits and continuous Soft limits for safety",
+                            "SysID integration for tuning",
                             "Telemetry output for debugging and tuning"
                         ]
                     }
@@ -467,55 +544,35 @@ public class DriveSubsystem extends SubsystemBase {
                         type: "list",
                         ordered: true,
                         items: [
-                            "Create the required motor controllers and sensors",
-                            "Configure the mechanism using the builder pattern",
-                            "Add the mechanism to a subsystem",
-                            "Create commands to control the mechanism",
-                            "Call the mechanism's update method in the subsystem's periodic method"
+                            "Create a object of the mechanism class or one of its subclasses ",
+                            "Create ExcaLib motors, sensors, and other hardware components",
+                            "Create Wpilib Triggers and Suppliers for sensors",
+                            "Configure the mechanism with the motors, sensors, and parameters",
+                            "Use the mechanism's methods to control it (e.g., ExtendCommand, smartVelocityCommand, etc.)",
                         ]
                     },
                     {
                         type: "code",
                         language: "java",
-                        title: "Example: Basic Arm Mechanism",
-                        code: `// Create motor controller
-CANSparkMax motor = new CANSparkMax(1, MotorType.kBrushless);
+                        title: "Basic Arm Mechanism",
+                        code: `FlyWheel flyWheelMechanism;
+TalonFXMotor flyWheelMotor;
 
-// Configure arm mechanism
-ArmMechanism arm = new ArmMechanism.Builder()
-    .withMotor(motor)
-    .withEncoder(motor.getEncoder())
-    .withPIDConstants(new PIDConstants(0.5, 0.0, 0.02))
-    .withGearRatio(100.0)
-    .withArmLength(0.6) // meters
-    .withLimits(0.0, Math.PI / 2) // 0 to 90 degrees
-    .build();
-
-// Add preset positions
-arm.addPresetPosition("stowed", 0.0);
-arm.addPresetPosition("pickup", Math.PI / 6); // 30 degrees
-arm.addPresetPosition("score", Math.PI / 2); // 90 degrees
-
-// In subsystem's periodic method
-@Override
-public void periodic() {
-    arm.update();
-}
-
-// Control methods
-public void setPosition(double angleRadians) {
-    arm.setPosition(angleRadians);
-}
-
-public void setPresetPosition(String presetName) {
-    arm.moveToPreset(presetName);
-}`
-                    },
-                    {
-                        type: "callout",
-                        calloutType: "tip",
-                        title: "Extending Mechanisms",
-                        text: "If the built-in mechanisms don't meet your needs, you can easily extend them to add custom functionality. Check the 'Advanced Usage' section for more information."
+public ExampleFlyWheel() {
+    flyWheelMotor = new TalonFXMotor(0); // new TalonFXMotor with CAN ID 0
+        
+     flyWheelMechanism = new FlyWheel(
+          flyWheelMotor, // pass threw the motor
+          0.5, // set the max acceleration (rad/s^2)
+          0.3, // set the max jerk (rad/s^3)
+          new Gains() //empty constructor for the PID gains, you can set them later
+     );
+        
+     flyWheelMechanism.smartVelocityCommand(
+            ()-> 0.5, // set the velocity supplier (rad/s)
+            this // pass the requirements to the command
+        );
+    }`
                     }
                 ]
             }
