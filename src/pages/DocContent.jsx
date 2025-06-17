@@ -3,6 +3,9 @@ import {useNavigate} from 'react-router-dom';
 import CodeBlock from '../components/CodeBlock';
 import CalloutBox from '../components/CalloutBox';
 import {docContent} from '../data/docContent';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
 
 const DocContent = ({docPath}) => {
     const navigate = useNavigate();
@@ -13,6 +16,7 @@ const DocContent = ({docPath}) => {
             navigate('/docs');
         }
     }, [docPath, navigate]);
+    dayjs.extend(relativeTime);
 
     if (!docContent[docPath]) {
         return null;
@@ -27,9 +31,8 @@ const DocContent = ({docPath}) => {
             </h1>
 
             {content.updated && (
-                <div
-                    className="inline-block bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium px-3 py-1 rounded-full mb-6">
-                    Last updated - {content.updated}
+                <div className="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                    Last updated -  {dayjs(content.updated).fromNow()}
                 </div>
             )}
 

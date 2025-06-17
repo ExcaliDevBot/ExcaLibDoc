@@ -16,10 +16,11 @@ const docSections = [
         title: 'Mechanisms',
         items: [
             {title: 'Overview', url: '/docs/mechanisms'},
+            {title: 'Generic Mechanism', url: '/docs/mechanisms/mechanism'},
             {title: 'Arm Mechanism', url: '/docs/mechanisms/arm'},
-            {title: 'Intake Mechanism', url: '/docs/mechanisms/intake'},
-            {title: 'Shooter Mechanism', url: '/docs/mechanisms/shooter'},
-            {title: 'Elevator Mechanism', url: '/docs/mechanisms/elevator'},
+            {title: 'Linear Mechanism', url: '/docs/mechanisms/linear'},
+            {title: 'FlyWheel Mechanism', url: '/docs/mechanisms/flywheel'},
+            {title: 'Turret Mechanism', url: '/docs/mechanisms/turret'},
         ]
     },
     {

@@ -89,70 +89,70 @@ const Home = () => {
             </section>
 
             {/* Testimonial Section */}
-            <section className="py-24 bg-white dark:bg-slate-800">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <motion.div
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        viewport={{once: true, margin: "-100px"}}
-                        transition={{duration: 0.5}}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-3xl font-bold tracking-tight text-primary-900 dark:text-white sm:text-4xl">
-                            Trusted by FRC Teams
-                        </h2>
-                        <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-                            Our library is used by teams around the world to build championship-winning robots.
-                        </p>
-                    </motion.div>
+            {/*<section className="py-24 bg-white dark:bg-slate-800">*/}
+            {/*    <div className="max-w-7xl mx-auto px-6 lg:px-8">*/}
+            {/*        <motion.div*/}
+            {/*            initial={{opacity: 0, y: 20}}*/}
+            {/*            whileInView={{opacity: 1, y: 0}}*/}
+            {/*            viewport={{once: true, margin: "-100px"}}*/}
+            {/*            transition={{duration: 0.5}}*/}
+            {/*            className="text-center mb-16"*/}
+            {/*        >*/}
+            {/*            <h2 className="text-3xl font-bold tracking-tight text-primary-900 dark:text-white sm:text-4xl">*/}
+            {/*                Trusted by FRC Teams*/}
+            {/*            </h2>*/}
+            {/*            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">*/}
+            {/*                Our library is used by teams around the world to build championship-winning robots.*/}
+            {/*            </p>*/}
+            {/*        </motion.div>*/}
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                quote: "This library saved us countless hours of development time. The swerve drive implementation is especially impressive.",
-                                author: "Team 1234 - The Coders",
-                                role: "World Championship Finalists"
-                            },
-                            {
-                                quote: "The mechanism classes are so well thought out. We were able to quickly prototype different arm configurations without writing much code.",
-                                author: "Team 5678 - Robo Warriors",
-                                role: "Regional Winners"
-                            },
-                            {
-                                quote: "The documentation is exceptional. Even our rookie programmers were able to understand and contribute to our robot code base.",
-                                author: "Team 9101 - Binary Bots",
-                                role: "Innovation in Control Award"
-                            }
-                        ].map((testimonial, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{opacity: 0, y: 20}}
-                                whileInView={{opacity: 1, y: 0}}
-                                viewport={{once: true}}
-                                transition={{duration: 0.5, delay: index * 0.1}}
-                                className="bg-slate-50 dark:bg-slate-700 rounded-lg p-6 shadow-sm border border-slate-200 dark:border-slate-600"
-                            >
-                                <svg className="h-12 w-12 text-secondary-400 mb-4" fill="currentColor"
-                                     viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
-                                </svg>
-                                <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
-                                    "{testimonial.quote}"
-                                </p>
-                                <div>
-                                    <h4 className="font-semibold text-primary-900 dark:text-white">
-                                        {testimonial.author}
-                                    </h4>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400">
-                                        {testimonial.role}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/*        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">*/}
+            {/*            {[*/}
+            {/*                {*/}
+            {/*                    quote: "This library saved us countless hours of development time. The swerve drive implementation is especially impressive.",*/}
+            {/*                    author: "Team 1234 - The Coders",*/}
+            {/*                    role: "World Championship Finalists"*/}
+            {/*                },*/}
+            {/*                {*/}
+            {/*                    quote: "The mechanism classes are so well thought out. We were able to quickly prototype different arm configurations without writing much code.",*/}
+            {/*                    author: "Team 5678 - Robo Warriors",*/}
+            {/*                    role: "Regional Winners"*/}
+            {/*                },*/}
+            {/*                {*/}
+            {/*                    quote: "The documentation is exceptional. Even our rookie programmers were able to understand and contribute to our robot code base.",*/}
+            {/*                    author: "Team 9101 - Binary Bots",*/}
+            {/*                    role: "Innovation in Control Award"*/}
+            {/*                }*/}
+            {/*            ].map((testimonial, index) => (*/}
+            {/*                <motion.div*/}
+            {/*                    key={index}*/}
+            {/*                    initial={{opacity: 0, y: 20}}*/}
+            {/*                    whileInView={{opacity: 1, y: 0}}*/}
+            {/*                    viewport={{once: true}}*/}
+            {/*                    transition={{duration: 0.5, delay: index * 0.1}}*/}
+            {/*                    className="bg-slate-50 dark:bg-slate-700 rounded-lg p-6 shadow-sm border border-slate-200 dark:border-slate-600"*/}
+            {/*                >*/}
+            {/*                    <svg className="h-12 w-12 text-secondary-400 mb-4" fill="currentColor"*/}
+            {/*                         viewBox="0 0 32 32" aria-hidden="true">*/}
+            {/*                        <path*/}
+            {/*                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>*/}
+            {/*                    </svg>*/}
+            {/*                    <p className="text-slate-700 dark:text-slate-300 mb-6 italic">*/}
+            {/*                        "{testimonial.quote}"*/}
+            {/*                    </p>*/}
+            {/*                    <div>*/}
+            {/*                        <h4 className="font-semibold text-primary-900 dark:text-white">*/}
+            {/*                            {testimonial.author}*/}
+            {/*                        </h4>*/}
+            {/*                        <p className="text-sm text-slate-600 dark:text-slate-400">*/}
+            {/*                            {testimonial.role}*/}
+            {/*                        </p>*/}
+            {/*                    </div>*/}
+            {/*                </motion.div>*/}
+            {/*            ))}*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
 
             {/* CTA Section */}
             <section className="py-24 bg-primary-900">
@@ -178,7 +178,7 @@ const Home = () => {
                                 Read the Documentation
                             </Link>
                             <a
-                                href="https://github.com/example/frc-library"
+                                href="https://github.com/ExcaliburFRC/ExcaLib"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="rounded-md bg-white/10 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors"
