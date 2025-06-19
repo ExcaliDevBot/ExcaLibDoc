@@ -19,7 +19,7 @@ function App() {
           
           <Route path="mechanisms" element={<DocContent docPath="mechanisms/overview" />} />
           <Route path="mechanisms/arm" element={<DocContent docPath="mechanisms/arm" />} />
-          <Route path="mechanisms/intake" element={<DocContent docPath="mechanisms/intake" />} />
+          <Route path="mechanisms/flywheel" element={<DocContent docPath="mechanisms/flywheel" />} />
           <Route path="mechanisms/shooter" element={<DocContent docPath="mechanisms/shooter" />} />
           <Route path="mechanisms/linear" element={<DocContent docPath="mechanisms/linear" />} />
           
