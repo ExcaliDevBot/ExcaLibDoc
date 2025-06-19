@@ -21,7 +21,7 @@ function App() {
           <Route path="mechanisms/arm" element={<DocContent docPath="mechanisms/arm" />} />
           <Route path="mechanisms/intake" element={<DocContent docPath="mechanisms/intake" />} />
           <Route path="mechanisms/shooter" element={<DocContent docPath="mechanisms/shooter" />} />
-          <Route path="mechanisms/elevator" element={<DocContent docPath="mechanisms/elevator" />} />
+          <Route path="mechanisms/linear" element={<DocContent docPath="mechanisms/linear" />} />
           
           <Route path="swerve" element={<DocContent docPath="swerve/overview" />} />
           <Route path="swerve/module" element={<DocContent docPath="swerve/module" />} />
