@@ -2,7 +2,7 @@ export const docContent = {
     "introduction": {
         title: "Introduction to ExcaLib",
         updated: "17.06.2025",
-        introduction: "ExcaLib is a comprehensive Java library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hradware wrappers and additional utilities to accelerate your robot development.",
+        introduction: "ExcaLib is a comprehensive WpilibJ library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hradware wrappers and additional utilities to accelerate your robot development.",
         sections: [
             {
                 id: "overview",

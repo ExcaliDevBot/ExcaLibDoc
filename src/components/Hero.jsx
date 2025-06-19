@@ -58,7 +58,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-lg leading-8 text-slate-300"
           >
-            A comprehensive Java library for FRC teams, offering pre-built mechanisms, custom swerve drive implementations, and advanced control systems to accelerate your robot development.
+            A comprehensive WpilibJ library for FRC teams, offering pre-built mechanisms, custom swerve drive implementations, and advanced control systems to accelerate your robot development.
           </motion.p>
           
           <motion.div 
