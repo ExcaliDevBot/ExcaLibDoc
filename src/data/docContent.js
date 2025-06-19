@@ -79,7 +79,7 @@ export const docContent = {
                             "Installation guide: Learn how to add ExcaLib to your robot project",
                             "Quick start guide: Build a basic robot with ExcaLib in an hour",
                             "Examples: Explore example code for common robot configurations",
-                            "API Reference: Detailed documentation for all FRCLib classes and methods"
+                            "API Reference: Detailed documentation for all ExcaLib classes and methods"
                         ]
                     }
                 ]
@@ -109,7 +109,7 @@ export const docContent = {
     "installation": {
         title: "Installation",
         updated: "January 12, 2025",
-        introduction: "This guide will walk you through the process of adding FRCLib to your robot project.",
+        introduction: "This guide will walk you through the process of adding ExcaLib to your robot project.",
         sections: [
             {
                 id: "prerequisites",
@@ -117,7 +117,7 @@ export const docContent = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "Before installing FRCLib, make sure you have the following:"
+                        text: "Before installing ExcaLib, make sure you have the following:"
                     },
                     {
                         type: "list",
@@ -133,7 +133,7 @@ export const docContent = {
             },
             {
                 id: "gradle",
-                title: "Adding FRCLib to Your Project",
+                title: "Adding ExcaLib to Your Project",
                 content: [
                     {
                         type: "paragraph",
@@ -148,13 +148,13 @@ export const docContent = {
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
     
-    // FRCLib dependency
-    implementation 'org.frclib:frclib:1.2.0'
+    // ExcaLib dependency
+    implementation 'org.ExcaLib:ExcaLib:1.2.0'
     
     // If you need specific modules only, you can use:
-    // implementation 'org.frclib:frclib-swerve:1.2.0'
-    // implementation 'org.frclib:frclib-mechanisms:1.2.0'
-    // implementation 'org.frclib:frclib-vision:1.2.0'
+    // implementation 'org.ExcaLib:ExcaLib-swerve:1.2.0'
+    // implementation 'org.ExcaLib:ExcaLib-mechanisms:1.2.0'
+    // implementation 'org.ExcaLib:ExcaLib-vision:1.2.0'
 }`
                     },
                     {
@@ -169,7 +169,7 @@ export const docContent = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "FRCLib depends on several vendor libraries for hardware support. Depending on the hardware you're using, you may need to install the following vendor libraries:"
+                        text: "ExcaLib depends on several vendor libraries for hardware support. Depending on the hardware you're using, you may need to install the following vendor libraries:"
                     },
                     {
                         type: "list",
@@ -184,7 +184,7 @@ export const docContent = {
                         type: "callout",
                         calloutType: "warning",
                         title: "Important",
-                        text: "Make sure your vendor library versions are compatible with the version of FRCLib you're using. Check the compatibility matrix in the documentation for details."
+                        text: "Make sure your vendor library versions are compatible with the version of ExcaLib you're using. Check the compatibility matrix in the documentation for details."
                     }
                 ]
             },
@@ -194,25 +194,25 @@ export const docContent = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "To verify that FRCLib is installed correctly, create a simple test class and import one of the FRCLib classes:"
+                        text: "To verify that ExcaLib is installed correctly, create a simple test class and import one of the ExcaLib classes:"
                     },
                     {
                         type: "code",
                         language: "java",
-                        title: "TestFRCLib.java",
+                        title: "TestExcaLib.java",
                         code: `package frc.robot;
 
-import org.frclib.drive.swerve.SwerveDrive;
+import org.ExcaLib.drive.swerve.SwerveDrive;
 
-public class TestFRCLib {
+public class TestExcaLib {
     public static void main(String[] args) {
-        System.out.println("FRCLib is installed correctly!");
+        System.out.println("ExcaLib is installed correctly!");
     }
 }`
                     },
                     {
                         type: "paragraph",
-                        text: "If your project compiles without errors, FRCLib is installed correctly."
+                        text: "If your project compiles without errors, ExcaLib is installed correctly."
                     }
                 ]
             }
@@ -277,7 +277,7 @@ public class ExampleElevator extends SubsystemBase {
 
         elevatorMechanism = new LinearExtension(
          
-                elevatorMotors,// pass threw anything that inherites from Motor.java
+                elevatorMotors,// pass threw any motor that inherites from Motor.java
                 firstMotor::getMotorPosition, // get the elevator's position
                 // let's say our elevator is straight-up and is not angled
                 () -> Math.PI / 2, 
@@ -805,11 +805,11 @@ public ExampleFlyWheel() {
                     {
                         "type": "code",
                         "language": "java",
-                        "title": "Arm Constructor",
+                        "title": "FlyWheel Constructor",
                         "code": `FlyWheel flyWheel;
 FlexMotor motor;
 
-public ExampleLinearMechanism() {
+public ExampleFlyWheelMechanism() {
     motor = new FlexMotor(13); // Motor with CAN id 13
 
     flyWheel = new FlyWheel(
@@ -862,10 +862,91 @@ public Command warmUpShooter(){
             }
         ]
     },
+       "mechanisms/turret": {
+        "title": "Turret Mechanism",
+        "updated": "June 19, 2025",
+        "introduction": "The Turret mechanism enables precise angular positioning using PID control, with support for" +
+            " continuous input and rotational soft limits. The class allows dynamic setpoints, integrates position" +
+            " feedback, and provides commands for accurate and responsive turret movement, making it ideal for" +
+            " applications that demand reliable and safe turret rotation control.",
+        "sections": [
+            {
+                "id": "constructor",
+                "title": "Constructor and Configuration",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "text": "To instantiate a Turret, you must provide a motor, rotational boundary, gains, PID tolerance and position measurement."
+                    },
+                    {
+                        "type": "code",
+                        "language": "java",
+                        "title": "Turret Constructor",
+                        "code": `Turret turret;
+SparkMaxMotor motor;
+
+public ExampleTurretMechanism() {
+    motor = new SparkMaxMotor(20); // Motor with CAN id 20
+
+    turret = new Turret(
+        motor, // Motor object
+        new ContinuousSoftLimit(0, 2 * Math.PI), // Rotational boundary in radians
+        new Gains(1.0, 0.0, 0.1, 0.0, 2, 0.3), // PID + Feedforward gains
+        0.05, // PID tolerance in radians
+        motor::getMotorPosition // Position measurement supplier
+    );
+}`
+                    },
+                    {
+                        "type": "callout",
+                        "calloutType": "info",
+                        "title": "Unlimited Rotation",
+                        "text": "The Turret class supports unlimited rotation by using a ContinuousSoftLimit, which " +
+                            "allows the turret to rotate continuously without hitting hard limits. " +
+                            "Use Double.POSITIVE_INFINITY and Double.NEGATIVE_INFINITY for the limits to allow full rotation."
+                    },
+                ]
+            },
+            {
+                "id": "commands",
+                "title": "Turret Commands",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "text": "The Turret class provides one key commands for angle position control:"
+                    },
+                    {
+                        "type": "list",
+                        "ordered": false,
+                        "items": [
+                            "setPositionCommand: moves the turret to the given setpoint.",
+                        ]
+                    },
+                    {
+                        "type": "code",
+                        "language": "java",
+                        "title": "Using setPositionCommand",
+                        "code":`Turret turret = new Turret(...);
+Rotation2d targetAngle = Rotation2d.fromDegrees(Math.PI / 2); // desired angle
+Command moveTurretCommand = turret.setPositionCommand(() -> targetAngle, this);
+// Schedule the command (e.g., in autonomous or when a button is pressed)
+moveTurretCommand.schedule();
+` },
+                    {
+                        "type": "callout",
+                        "calloutType": "warning",
+                        "title": "Warning",
+                        "text": "Ensure that the turret's rotation limits and PID gains are configured correctly to prevent mechanical damage or unsafe operation.\n" +
+                            "Improper use or configuration may result in unexpected turret movement or hardware failure."
+                    }
+                ]
+            }
+        ]
+    },
     "swerve/overview": {
         title: "Swerve Drive Overview",
         updated: "January 25, 2025",
-        introduction: "Swerve drive is a popular drivetrain for FRC robots that provides unparalleled maneuverability and control. FRCLib provides a complete implementation of swerve drive that's easy to set up and use, while offering advanced features for teams looking to maximize performance.",
+        introduction: "Swerve drive is a popular drivetrain for FRC robots that provides unparalleled maneuverability and control. ExcaLib provides a complete implementation of swerve drive that's easy to set up and use, while offering advanced features for teams looking to maximize performance.",
         sections: [
             {
                 id: "introduction",
@@ -877,7 +958,7 @@ public Command warmUpShooter(){
                     },
                     {
                         type: "paragraph",
-                        text: "While swerve drive offers significant advantages, it's also more complex to implement and tune. FRCLib simplifies this process by providing a well-tested, robust implementation that handles the complex math and control algorithms for you."
+                        text: "While swerve drive offers significant advantages, it's also more complex to implement and tune. ExcaLib simplifies this process by providing a well-tested, robust implementation that handles the complex math and control algorithms for you."
                     },
                     {
                         type: "callout",
@@ -895,7 +976,7 @@ public Command warmUpShooter(){
                 content: [
                     {
                         type: "paragraph",
-                        text: "The FRCLib swerve drive implementation consists of several key components:"
+                        text: "The ExcaLib swerve drive implementation consists of several key components:"
                     },
                     {
                         type: "list",
@@ -916,7 +997,7 @@ public Command warmUpShooter(){
                 content: [
                     {
                         type: "paragraph",
-                        text: "To set up swerve drive with FRCLib, you need to create a configuration for each swerve module and then create the SwerveDrive object:"
+                        text: "To set up swerve drive with ExcaLib, you need to create a configuration for each swerve module and then create the SwerveDrive object:"
                     },
                     {
                         type: "code",
