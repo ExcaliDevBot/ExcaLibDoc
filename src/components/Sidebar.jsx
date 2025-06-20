@@ -13,6 +13,24 @@ const docSections = [
         ]
     },
     {
+        title: 'Wrappers',
+        items: [
+            {title: 'Overview', url: '/docs/wrappers'},
+            {title: 'Motor Wrapper', url: '/docs/wrappers/motors'},
+            {title: 'Physics Wrappers', url: '/docs/wrappers/pyhsics'},
+            {title: 'IMU Wrappers', url: '/docs/wrappers/imu'},
+        ]
+    },    {
+        title: 'Utilities',
+        items: [
+            {title: 'Overview', url: '/docs/utilities'},
+            {title: 'Soft Limits', url: '/docs/utilities/soft-limits'},
+            {title: 'Gains', url: '/docs/utilities/gains'},
+            {title: 'Alliance Utilities', url: '/docs/utilities/alliance'},
+            {title: 'Commands', url: '/docs/utilities/commands'},
+        ]
+    },
+    {
         title: 'Mechanisms',
         items: [
             {title: 'Overview', url: '/docs/mechanisms'},
@@ -24,7 +42,7 @@ const docSections = [
         ]
     },
     {
-        title: 'Swerve Drive',
+        title: 'Swerve',
         items: [
             {title: 'Overview', url: '/docs/swerve'},
             {title: 'SwerveModule Class', url: '/docs/swerve/module'},
