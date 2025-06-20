@@ -1,5 +1,5 @@
 import {intoduction} from './introduction/intro.js';
-import {installation} from './introduction/installation.js';
+import {installation} from './introduction/installation.jsx';
 import {quickStart} from "./introduction/quick-start.js";
 import {overview} from "./mechanisims/overview.js";
 import {arm} from "./mechanisims/arm.js";
@@ -7,6 +7,7 @@ import {flywheel} from "./mechanisims/flywheel.js";
 import {turret} from "./mechanisims/turret.js";
 import {linear} from "./mechanisims/linear.js";
 import {mechanism} from "./mechanisims/mechanism.js";
+import {wrapperOverview} from "./wrappers/overview.js";
 
 export const docContent = {
     "introduction":
@@ -26,6 +27,8 @@ export const docContent = {
     "mechanisms/linear":
     linear,
     "mechanisms/mechanism":
-    mechanism
+    mechanism,
+    "wrappers/overview":
+    wrapperOverview
 
 };

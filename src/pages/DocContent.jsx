@@ -32,7 +32,7 @@ const DocContent = ({docPath}) => {
 
             {content.updated && (
                 <div className="text-sm text-slate-600 dark:text-slate-300 mb-4">
-                    Last updated -  {dayjs(content.updated).fromNow()}
+                    Last updated - {dayjs(content.updated).fromNow()}
                 </div>
             )}
 
@@ -51,7 +51,11 @@ const DocContent = ({docPath}) => {
                     {section.content.map((item, itemIndex) => {
                         switch (item.type) {
                             case 'paragraph':
-                                return (
+                                return item.jsx ? (
+                                    <div key={itemIndex} className="text-slate-700 dark:text-slate-300 mb-4">
+                                        {item.jsx}
+                                    </div>
+                                ) : (
                                     <p key={itemIndex} className="text-slate-700 dark:text-slate-300 mb-4">
                                         {item.text}
                                     </p>
