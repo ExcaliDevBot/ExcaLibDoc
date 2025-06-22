@@ -5,13 +5,13 @@ import CalloutBox from '../components/CalloutBox';
 import {docContent} from '../data/docContent';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import Table from '../components/Table'; // Import the Table component
 
 
-const DocContent = ({docPath}) => {
+const DocContent = ({ docPath }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // If docPath doesn't exist, redirect to the first available doc
         if (!docContent[docPath]) {
             navigate('/docs');
         }
@@ -92,6 +92,16 @@ const DocContent = ({docPath}) => {
                                             <li key={listItemIndex}>{listItem}</li>
                                         ))}
                                     </ul>
+                                );
+                            case 'table':
+                                return (
+                                    <Table
+                                        key={itemIndex}
+                                        content={{
+                                            columns: item.columns,
+                                            rows: item.rows,
+                                        }}
+                                    />
                                 );
                             default:
                                 return null;

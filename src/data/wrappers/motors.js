@@ -111,10 +111,10 @@ export const motors = {
                     text: 'Example:',
                 },
                 {
-                        "type": "code",
-                        "language": "java",
-                        "title": "Using a Motor Wrapper",
-                        "code": `public class ExampleProgram {
+                    "type": "code",
+                    "language": "java",
+                    "title": "Using a Motor Wrapper",
+                    "code": `public class ExampleProgram {
     TalonFXMotor exampleMotor;
     SparkMaxMotor secondExampleMotor;
 
@@ -130,7 +130,7 @@ export const motors = {
         secondExampleMotor.setVoltage(secondMotorVoltage * 0.5);
     }
 }`
-                    },
+                },
             ]
         },
         {
@@ -142,15 +142,19 @@ export const motors = {
                     text: 'Here is a list of the most commonly used commands and functions for the motor wrappers in ExcaLib:',
                 },
                 {
-                    type: 'list',
-                    ordered: false,
-                    items: [
-                        'Abstraction of low-level hardware details',
-                        'Support for multiple motor types and configurations',
-                        'Integration with the ExcaLib framework',
-                        'Extensibility for advanced users who need more control',
-                        'easy to switch between different motor controllers',
-                    ]
+                    type: 'table',
+                    columns: ['Name', 'Description'],
+                    rows: [
+                        ['REV SparkMax Controller Wrapper', 'Simplifies control of REV SparkMax controllers.'],
+                        ['REV SparkFlex Wrapper', 'Provides flexibility for REV SparkFlex hardware.'],
+                        ['CTRE TalonFX Wrapper', 'Abstracts control of CTRE TalonFX motor controllers.'],
+                        ['Motor Group Wrapper', 'Groups multiple motors for unified control.'],
+                        ['KauaiLabs NavX Wrapper', 'Encapsulates functionality of the NavX sensor.'],
+                        ['CTRE Pigeon2 Wrapper', 'Simplifies integration of the Pigeon2 IMU.'],
+                        ['SysId Implantation Wrapper', 'Facilitates system identification for tuning.'],
+                        ['Vector2D Wrapper', 'Handles 2D vector operations.'],
+                        ['Circle and Line Wrappers', 'Provides geometric utilities for circles and lines.'],
+                    ],
                 }
             ]
         },
