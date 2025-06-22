@@ -8,6 +8,7 @@ import {turret} from "./mechanisims/turret.js";
 import {linear} from "./mechanisims/linear.js";
 import {mechanism} from "./mechanisims/mechanism.js";
 import {wrapperOverview} from "./wrappers/overview.js";
+import {motors} from "./wrappers/motors.js";
 
 export const docContent = {
     "introduction":
@@ -29,6 +30,8 @@ export const docContent = {
     "mechanisms/mechanism":
     mechanism,
     "wrappers/overview":
-    wrapperOverview
+    wrapperOverview,
+    "wrappers/motors":
+    motors
 
 };

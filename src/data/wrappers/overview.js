@@ -23,7 +23,7 @@ export const wrapperOverview = {
                         'CTRE TalonFX Wrapper',
                         'Motor Group Wrapper',
                         'KauaiLabs NavX Wrapper',
-                        'CTRE Pigeon Wrapper',
+                        'CTRE Pigeon2 Wrapper',
                         'SysId Implantation Wrapper',
                         'Vector2D Wrapper',
                         'Circle and Line Wrappers',
@@ -39,7 +39,7 @@ export const wrapperOverview = {
                 },
                 {
                     type: 'paragraph',
-                    text: 'All of out wrappers are designed to be used inside the ExcaLib framework. The use any of the ',
+                    text: 'All of out wrappers are designed to be used inside the ExcaLib framework.',
                 },
             ]
         }
