@@ -134,26 +134,75 @@ export const motors = {
             ]
         },
         {
-            title: 'Commands and Functions',
+            title: 'Available Functions',
             id: 'controller-commands',
             content: [
                 {
                     type: 'paragraph',
-                    text: 'Here is a list of the most commonly used commands and functions for the motor wrappers in ExcaLib:',
+                    text: 'Here is a list of the most commonly used functions for the motor wrappers in ExcaLib:',
                 },
                 {
                     type: 'table',
                     columns: ['Name', 'Description'],
                     rows: [
-                        ['REV SparkMax Controller Wrapper', 'Simplifies control of REV SparkMax controllers.'],
-                        ['REV SparkFlex Wrapper', 'Provides flexibility for REV SparkFlex hardware.'],
-                        ['CTRE TalonFX Wrapper', 'Abstracts control of CTRE TalonFX motor controllers.'],
-                        ['Motor Group Wrapper', 'Groups multiple motors for unified control.'],
-                        ['KauaiLabs NavX Wrapper', 'Encapsulates functionality of the NavX sensor.'],
-                        ['CTRE Pigeon2 Wrapper', 'Simplifies integration of the Pigeon2 IMU.'],
-                        ['SysId Implantation Wrapper', 'Facilitates system identification for tuning.'],
-                        ['Vector2D Wrapper', 'Handles 2D vector operations.'],
-                        ['Circle and Line Wrappers', 'Provides geometric utilities for circles and lines.'],
+                        ['setVoltage', 'Sets the voltage of the motor'],
+                        ['setPercentage', 'Sets the percentage of the motor (- 1.0 - 1.0)'],
+                        ['setFollower', 'Causes this controller\'s output to mirror the provided leader.'],
+                        ['setIdleState', 'Sets the idle mode setting for the motor (BRAKE / COAST).'],
+                        ['getDeviceID', 'Returns the device ID of the motor controller.'],
+                        ['getMotorPosition', 'Gets the current position of the motor.'],
+                        ['getMotorVelocity', 'Gets the current velocity of the motor.'],
+                        ['getCurrent', 'Gets the current draw of the motor.'],
+                        ['getVoltage', 'Gets the current voltage applied to the motor.'],
+                        ['getTemperature', 'Gets the current temperature of the motor.'],
+                        ['setSoftLimit', 'Sets the soft limit for the motor.'],
+                        ['setInverted', 'Sets whether the motor is inverted.'],
+                        ['setPositionConversionFactor', 'Sets the position conversion factor for the motor.'],
+                        ['setVelocityConversionFactor', 'Sets the velocity conversion factor for the motor.'],
+                        ['setCurrentLimit', 'Sets the current limit for the motor.'],
+                        ['setMotorPosition', 'Sets the position of the motor'],
+
+                    ],
+                }
+            ]
+        },
+        {
+            title: 'The Motor Interface',
+            id: 'Design Philosophy',
+            content: [
+                {
+                    type: 'paragraph',
+                    text: 'All mechanisms in ExcaLib are required to use one of the implementations of the Motor' +
+                        ' interface. If you download the skeleton version of ExcaLib, you\'ll need to provide ' +
+                        'your own implementation of Motor within your mechanism.',
+                },
+                {
+                    type: 'paragraph',
+                    text: 'required functions for a custom interface:',
+                },
+                {
+                    type: 'table',
+                    columns: ['Name', 'Parameters', 'return type'],
+                    rows: [
+                        ['stopMotor', '-', 'void'],
+                        ['setVoltage', 'double voltage', 'void'],
+                        ['setPercentage', 'double percentage', 'void'],
+                        ['setFollower', 'int leaderID', 'void'],
+                        ['setIdleState', 'IdleState idleMode', 'void'],
+                        ['getDeviceID', '-', 'int'],
+                        ['getMotorPosition', '-', 'double'],
+                        ['getMotorVelocity', '-', 'double'],
+                        ['getCurrent', '-', 'double'],
+                        ['getVoltage', '-', 'double'],
+                        ['getTemperature', '-', 'double'],
+                        ['getIdleState', '-', 'IdleState'],
+                        ['setSoftLimit', 'DirectionState directionState, float limit', 'void'],
+                        ['setInverted', 'DirectionState mode', 'void'],
+                        ['setPositionConversionFactor', 'double conversionFactor', 'void'],
+                        ['setVelocityConversionFactor', 'double conversionFactor', 'void'],
+                        ['setCurrentLimit', 'int stallLimit, int freeLimit', 'void'],
+                        ['setMotorPosition', 'double position', 'void'],
+
                     ],
                 }
             ]
