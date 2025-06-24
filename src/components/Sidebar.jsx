@@ -24,11 +24,11 @@ const docSections = [
     }, {
         title: 'Utilities',
         items: [
-            {title: 'Overview', url: '/docs/utilities'},
-            {title: 'Soft Limits', url: '/docs/utilities/soft-limits'},
-            {title: 'Gains', url: '/docs/utilities/gains'},
-            {title: 'Alliance Utilities', url: '/docs/utilities/alliance'},
-            {title: 'Commands', url: '/docs/utilities/commands'},
+            {title: 'Overview', url: '/docs/utils'},
+            {title: 'Soft Limits', url: '/docs/utils/soft-limits'},
+            {title: 'Gains', url: '/docs/utils/gains'},
+            {title: 'Alliance Utilities', url: '/docs/utils/alliance'},
+            {title: 'Commands', url: '/docs/utils/commands'},
         ]
     },
     {

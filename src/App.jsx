@@ -30,11 +30,11 @@ function App() {
                     <Route path="wrappers/imu" element={<DocContent docPath="wrappers/imu"/>}/>
                     <Route path="wrappers/sysid" element={<DocContent docPath="wrappers/sysid"/>}/>
 
-                    <Route path="utilities" element={<DocContent docPath="utilities/overview"/>}/>
-                    <Route path="utilities/motors" element={<DocContent docPath="utilities/soft-limits"/>}/>
-                    <Route path="utilities/pyhsics" element={<DocContent docPath="utilities/gains"/>}/>
-                    <Route path="utilities/imu" element={<DocContent docPath="utilities/alliance"/>}/>
-                    <Route path="utilities/imu" element={<DocContent docPath="utilities/commands"/>}/>
+                    <Route path="utils" element={<DocContent docPath="utils/overview"/>}/>
+                    <Route path="utils/soft-limits" element={<DocContent docPath="utils/soft-limits"/>}/>
+                    <Route path="utils/gains" element={<DocContent docPath="utils/gains"/>}/>
+                    <Route path="utils/alliance" element={<DocContent docPath="utils/alliance"/>}/>
+                    <Route path="utils/commands" element={<DocContent docPath="utils/commands"/>}/>
 
                     <Route path="swerve" element={<DocContent docPath="swerve/overview"/>}/>
                     <Route path="swerve/module" element={<DocContent docPath="swerve/module"/>}/>
