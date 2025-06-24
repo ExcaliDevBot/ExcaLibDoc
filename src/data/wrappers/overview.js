@@ -24,7 +24,7 @@ export const wrapperOverview = {
                         'Motor Group Wrapper',
                         'KauaiLabs NavX Wrapper',
                         'CTRE Pigeon2 Wrapper',
-                        'SysId Implantation Wrapper',
+                        'SysId Implementation Wrapper',
                         'Vector2D Wrapper',
                         'Circle and Line Wrappers',
                     ]
