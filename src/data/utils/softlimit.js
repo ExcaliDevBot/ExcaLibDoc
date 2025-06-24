@@ -77,7 +77,7 @@ export const softlimit = {
 
         },
         {
-            id: "usage",
+            id: "usage-continuous",
             title: "Using Continuous SoftLimit",
             content: [
                 {
