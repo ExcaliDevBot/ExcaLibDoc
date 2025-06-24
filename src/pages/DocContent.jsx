@@ -8,7 +8,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import Table from '../components/Table'; // Import the Table component
 
 
-const DocContent = ({ docPath }) => {
+const DocContent = ({docPath}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,6 +21,22 @@ const DocContent = ({ docPath }) => {
     if (!docContent[docPath]) {
         return null;
     }
+
+    const formatTextWithCode = (text) => {
+    const regex = /<([^>]+)>/g;
+    return text.split(regex).map((part, index) =>
+        index % 2 === 1 ? (
+            <code
+                key={index}
+                className="bg-gray-200 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1 rounded font-mono"
+            >
+                {part}
+            </code>
+        ) : (
+            part
+        )
+    );
+};
 
     const content = docContent[docPath];
 
@@ -57,9 +73,10 @@ const DocContent = ({ docPath }) => {
                                     </div>
                                 ) : (
                                     <p key={itemIndex} className="text-slate-700 dark:text-slate-300 mb-4">
-                                        {item.text}
+                                        {formatTextWithCode(item.text)}
                                     </p>
-                                );
+                                )
+                                    ;
                             case 'code':
                                 return (
                                     <CodeBlock key={itemIndex} language={item.language || 'java'} title={item.title}>

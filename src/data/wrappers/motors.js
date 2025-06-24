@@ -172,8 +172,8 @@ export const motors = {
             content: [
                 {
                     type: 'paragraph',
-                    text: 'All mechanisms in ExcaLib are required to use one of the implementations of the Motor' +
-                        ' interface. If you download the skeleton version of ExcaLib, you\'ll need to provide ' +
+                    text: 'All mechanisms in ExcaLib are required to use one of the implementations of the <Motor' +
+                        ' interface>. If you download the skeleton version of ExcaLib, you\'ll need to provide ' +
                         'your own implementation of Motor within your mechanism.',
                 },
                 {
