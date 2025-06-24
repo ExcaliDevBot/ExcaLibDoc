@@ -21,7 +21,7 @@ const docSections = [
             {title: 'IMU Wrappers', url: '/docs/wrappers/imu'},
             {title: 'Sysid Implantation', url: '/docs/wrappers/sysid'},
         ]
-    },    {
+    }, {
         title: 'Utilities',
         items: [
             {title: 'Overview', url: '/docs/utilities'},
@@ -193,8 +193,8 @@ const SidebarContent = ({expandedSections, toggleSection, currentPath}) => {
                                         <Link
                                             to={item.url}
                                             className={`block px-3 py-2 rounded-md text-sm ${
-                                                currentPath === item.url || currentPath.startsWith(`${item.url}/`)
-                                                    ? 'bg-primary-600 text-white font-medium' // Updated for better dark mode contrast
+                                                currentPath === item.url
+                                                    ? 'bg-primary-600 text-white font-medium'
                                                     : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
                                             }`}
                                         >
