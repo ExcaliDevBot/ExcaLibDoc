@@ -26,7 +26,7 @@ function App() {
 
                     <Route path="wrappers" element={<DocContent docPath="wrappers/overview"/>}/>
                     <Route path="wrappers/motors" element={<DocContent docPath="wrappers/motors"/>}/>
-                    <Route path="wrappers/pyhsics" element={<DocContent docPath="wrappers/pyhsics"/>}/>
+                    <Route path="wrappers/physics" element={<DocContent docPath="wrappers/physics"/>}/>
                     <Route path="wrappers/imu" element={<DocContent docPath="wrappers/imu"/>}/>
                     <Route path="wrappers/sysid" element={<DocContent docPath="wrappers/sysid"/>}/>
 
