@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export let installation;
 installation = {
     title: "Installation",
@@ -22,6 +24,87 @@ installation = {
                         "WpiLib VS Code or IntelliJ IDEA with the FRC plugins"
                     ]
                 }
+            ]
+        },
+        {
+            id: "choose-version",
+            title: "Choose Your Version",
+            content: [
+                {
+                    type: "paragraph",
+                    text: "Select the version of ExcaLib you want to use:"
+                },
+                {
+                    type: "paragraph",
+                    text: "<All-in-one Version:>"
+                },
+                {
+                    type: "paragraph",
+                    jsx: (
+                        <>
+                            A version that includes all ExcaLib features and is suitable for most teams, it
+                            includes" +
+                            " default implementations of the {"  "}
+                            <Link
+                                to="/docs/wrappers/motors"
+                                style={{textDecoration: "underline"}}
+                            >
+                                Motor.java
+                            </Link>
+                            {" "} and {""}
+                            <Link
+                                to="/docs/wrappers/imu"
+                                style={{textDecoration: "underline"}}
+                            >
+                                IMU.java
+                            </Link>
+                            {" "} interfaces.
+                        </>
+                    )
+                },
+                {
+                    type: "code",
+                    language: "markdown",
+                    title: "Move… Version",
+                    code: `https://raw.githubusercontent.com/ExcaliburFRC/ExcaLIB/v0.1.0-full/ExcaLIB.json`
+                },
+                {
+                    type: "paragraph",
+                    text: "*/*This version requires additional libraries, see below.*/"
+                },
+                {
+                    type: "paragraph",
+                    text: "<Skeleton Version:>"
+                },
+                {
+                    type: "paragraph",
+                    text: "This version enables custom implementation for the <Motor.java> and the <IMU.java> interfaces"
+                },
+                {
+                    type: "code",
+                    language: "markdown",
+                    title: "Skeleton Version",
+                    code: `https://raw.githubusercontent.com/ExcaliburFRC/ExcaLIB/v0.1.0-skeleton/ExcaLIB.json`
+                }
+            ]
+        },
+        {
+            id: "gradle",
+            title: "Adding the All-in-one Version to Your Project",
+            content: [
+                {
+                    type: "paragraph",
+                    text: "The All-in-one version of ExcaLib requires additional libraries to function properly. Please ensure you have the following libraries installed in your project:"
+                },
+                {
+                    type: "list",
+                    ordered: false,
+                    items: [
+                        "REVLib - <https://software-metadata.revrobotics.com/REVLib-2025.json>",
+                        "Studica  - <https://dev.studica.com/releases/2025/Studica-2025.0.1.json>",
+                        "Phoenix6 (CTRE) - <https://maven.ctr-electronics.com/release/com/ctre/phoenix6/latest/Phoenix6-frc2025-latest.json>",
+                    ]
+                },
             ]
         },
         {

@@ -110,8 +110,8 @@ export const softlimit = {
                     "type": "callout",
                     "calloutType": "warning",
                     "title": "Important Note",
-                    "text": "This code is incomplete and has many variables, parameters and imports." +
-                        "This is for demonstration purposes only.   "
+                    "text": "This code is incomplete and has many variables, parameters and imports missing." +
+                        " This is for demonstration purposes only.   "
                 },
                 {
                     "type": "code",
