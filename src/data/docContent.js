@@ -14,6 +14,7 @@ import {sysid} from "./wrappers/sysid.jsx";
 import {softlimit} from "./utils/softlimit.js";
 import {gains} from "./utils/gains.js";
 import {alliance} from "./utils/alliance.js";
+import {physics} from "./wrappers/physics.js";
 
 export const docContent = {
     "introduction":
@@ -40,6 +41,8 @@ export const docContent = {
     motors,
     "wrappers/imu":
     imu,
+    "wrappers/physics":
+    physics,
     "wrappers/sysid":
     sysid,
     "utils/soft-limits":
