@@ -10,7 +10,7 @@ import {mechanism} from "./mechanisims/mechanism.js";
 import {wrapperOverview} from "./wrappers/overview.js";
 import {motors} from "./wrappers/motors.js";
 import {imu} from "./wrappers/imu.js";
-import {sysid} from "./wrappers/sysid.js";
+import {sysid} from "./wrappers/sysid.jsx";
 
 export const docContent = {
     "introduction":

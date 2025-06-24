@@ -23,20 +23,20 @@ const DocContent = ({docPath}) => {
     }
 
     const formatTextWithCode = (text) => {
-    const regex = /<([^>]+)>/g;
-    return text.split(regex).map((part, index) =>
-        index % 2 === 1 ? (
-            <code
-                key={index}
-                className="bg-gray-200 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1 rounded font-mono"
-            >
-                {part}
-            </code>
-        ) : (
-            part
-        )
-    );
-};
+        const regex = /<([^>]+)>/g;
+        return text.split(regex).map((part, index) =>
+            index % 2 === 1 ? (
+                <code
+                    key={index}
+                    className="bg-gray-200 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1 rounded font-mono"
+                >
+                    {part}
+                </code>
+            ) : (
+                part
+            )
+        );
+    };
 
     const content = docContent[docPath];
 
@@ -99,14 +99,14 @@ const DocContent = ({docPath}) => {
                                     <ol key={itemIndex}
                                         className="list-decimal pl-6 mb-6 text-slate-700 dark:text-slate-300 space-y-2">
                                         {item.items.map((listItem, listItemIndex) => (
-                                            <li key={listItemIndex}>{listItem}</li>
+                                            <li key={listItemIndex}>{formatTextWithCode(listItem)}</li>
                                         ))}
                                     </ol>
                                 ) : (
                                     <ul key={itemIndex}
                                         className="list-disc pl-6 mb-6 text-slate-700 dark:text-slate-300 space-y-2">
                                         {item.items.map((listItem, listItemIndex) => (
-                                            <li key={listItemIndex}>{listItem}</li>
+                                            <li key={listItemIndex}>{formatTextWithCode(listItem)}</li>
                                         ))}
                                     </ul>
                                 );
