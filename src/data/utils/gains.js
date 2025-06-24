@@ -47,7 +47,7 @@ export const gains = {
 
         },
         {
-            id: "using-gains",
+            id: "available-constructors",
             title: "Aviailable Constructors",
             content: [
                 {
