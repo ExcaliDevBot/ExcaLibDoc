@@ -13,6 +13,7 @@ import {imu} from "./wrappers/imu.js";
 import {sysid} from "./wrappers/sysid.jsx";
 import {softlimit} from "./utils/softlimit.js";
 import {gains} from "./utils/gains.js";
+import {alliance} from "./utils/alliance.js";
 
 export const docContent = {
     "introduction":
@@ -44,6 +45,7 @@ export const docContent = {
     "utils/soft-limits":
     softlimit,
     "utils/gains":
-    gains
-
+    gains,
+    "utils/alliance":
+    alliance
 };
