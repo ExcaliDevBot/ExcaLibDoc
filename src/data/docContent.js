@@ -9,6 +9,7 @@ import {linear} from "./mechanisims/linear.js";
 import {mechanism} from "./mechanisims/mechanism.js";
 import {wrapperOverview} from "./wrappers/overview.js";
 import {motors} from "./wrappers/motors.js";
+import {imu} from "./wrappers/imu.js";
 
 export const docContent = {
     "introduction":
@@ -32,6 +33,8 @@ export const docContent = {
     "wrappers/overview":
     wrapperOverview,
     "wrappers/motors":
-    motors
+    motors,
+    "wrappers/imu":
+    imu
 
 };
