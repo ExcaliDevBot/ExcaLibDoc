@@ -23,19 +23,37 @@ const DocContent = ({docPath}) => {
     }
 
     const formatTextWithCode = (text) => {
-        const regex = /<([^>]+)>/g;
-        return text.split(regex).map((part, index) =>
-            index % 2 === 1 ? (
-                <code
-                    key={index}
-                    className="bg-gray-200 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1 rounded font-mono"
-                >
-                    {part}
-                </code>
-            ) : (
-                part
-            )
-        );
+        const regex = /<([^>]+)>|\/\*([^*]+)\*\//g;
+        return text.split(regex).map((part, index) => {
+            if (part && index % 3 === 1 && part.trim()) {
+                return (
+                    <code
+                        key={index}
+                        className="bg-gray-200 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1 rounded font-mono"
+                    >
+                        {part}
+                    </code>
+                );
+            } else if (part && index % 3 === 2 && part.trim()) {
+                return (
+                    <em
+                        key={index}
+                        className="italic text-purple-300"
+                        style={{
+                            background: 'transparent',
+                            padding: '0',
+                            margin: '0',
+                            lineHeight: 'inherit',
+                            display: 'inline',
+                        }}
+                    >
+                        {part}
+                    </em>
+                );
+            } else {
+                return part || null;
+            }
+        });
     };
 
     const content = docContent[docPath];
