@@ -17,7 +17,7 @@ const docSections = [
         items: [
             {title: 'Overview', url: '/docs/wrappers'},
             {title: 'Motor Wrapper', url: '/docs/wrappers/motors'},
-            {title: 'Physics Wrappers', url: '/docs/wrappers/pyhsics'},
+            {title: 'Physics Wrappers', url: '/docs/wrappers/physics'},
             {title: 'IMU Wrappers', url: '/docs/wrappers/imu'},
             {title: 'Sysid Implantation', url: '/docs/wrappers/sysid'},
         ]
