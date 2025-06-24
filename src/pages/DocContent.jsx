@@ -5,13 +5,13 @@ import CalloutBox from '../components/CalloutBox';
 import {docContent} from '../data/docContent';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import Table from '../components/Table'; // Import the Table component
 
 
 const DocContent = ({docPath}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // If docPath doesn't exist, redirect to the first available doc
         if (!docContent[docPath]) {
             navigate('/docs');
         }
@@ -21,6 +21,40 @@ const DocContent = ({docPath}) => {
     if (!docContent[docPath]) {
         return null;
     }
+
+    const formatTextWithCode = (text) => {
+        const regex = /<([^>]+)>|\/\*([^*]+)\*\//g;
+        return text.split(regex).map((part, index) => {
+            if (part && index % 3 === 1 && part.trim()) {
+                return (
+                    <code
+                        key={index}
+                        className="bg-gray-200 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1 rounded font-mono"
+                    >
+                        {part}
+                    </code>
+                );
+            } else if (part && index % 3 === 2 && part.trim()) {
+                return (
+                    <em
+                        key={index}
+                        className="italic text-purple-300"
+                        style={{
+                            background: 'transparent',
+                            padding: '0',
+                            margin: '0',
+                            lineHeight: 'inherit',
+                            display: 'inline',
+                        }}
+                    >
+                        {part}
+                    </em>
+                );
+            } else {
+                return part || null;
+            }
+        });
+    };
 
     const content = docContent[docPath];
 
@@ -32,7 +66,7 @@ const DocContent = ({docPath}) => {
 
             {content.updated && (
                 <div className="text-sm text-slate-600 dark:text-slate-300 mb-4">
-                    Last updated -  {dayjs(content.updated).fromNow()}
+                    Last updated - {dayjs(content.updated).fromNow()}
                 </div>
             )}
 
@@ -51,11 +85,16 @@ const DocContent = ({docPath}) => {
                     {section.content.map((item, itemIndex) => {
                         switch (item.type) {
                             case 'paragraph':
-                                return (
+                                return item.jsx ? (
+                                    <div key={itemIndex} className="text-slate-700 dark:text-slate-300 mb-4">
+                                        {item.jsx}
+                                    </div>
+                                ) : (
                                     <p key={itemIndex} className="text-slate-700 dark:text-slate-300 mb-4">
-                                        {item.text}
+                                        {formatTextWithCode(item.text)}
                                     </p>
-                                );
+                                )
+                                    ;
                             case 'code':
                                 return (
                                     <CodeBlock key={itemIndex} language={item.language || 'java'} title={item.title}>
@@ -78,16 +117,26 @@ const DocContent = ({docPath}) => {
                                     <ol key={itemIndex}
                                         className="list-decimal pl-6 mb-6 text-slate-700 dark:text-slate-300 space-y-2">
                                         {item.items.map((listItem, listItemIndex) => (
-                                            <li key={listItemIndex}>{listItem}</li>
+                                            <li key={listItemIndex}>{formatTextWithCode(listItem)}</li>
                                         ))}
                                     </ol>
                                 ) : (
                                     <ul key={itemIndex}
                                         className="list-disc pl-6 mb-6 text-slate-700 dark:text-slate-300 space-y-2">
                                         {item.items.map((listItem, listItemIndex) => (
-                                            <li key={listItemIndex}>{listItem}</li>
+                                            <li key={listItemIndex}>{formatTextWithCode(listItem)}</li>
                                         ))}
                                     </ul>
+                                );
+                            case 'table':
+                                return (
+                                    <Table
+                                        key={itemIndex}
+                                        content={{
+                                            columns: item.columns,
+                                            rows: item.rows,
+                                        }}
+                                    />
                                 );
                             default:
                                 return null;

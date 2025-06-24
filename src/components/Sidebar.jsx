@@ -13,6 +13,25 @@ const docSections = [
         ]
     },
     {
+        title: 'Wrappers',
+        items: [
+            {title: 'Overview', url: '/docs/wrappers'},
+            {title: 'Motor Wrapper', url: '/docs/wrappers/motors'},
+            {title: 'Physics Wrappers', url: '/docs/wrappers/physics'},
+            {title: 'IMU Wrappers', url: '/docs/wrappers/imu'},
+            {title: 'Sysid Implantation', url: '/docs/wrappers/sysid'},
+        ]
+    }, {
+        title: 'Utilities',
+        items: [
+            {title: 'Overview', url: '/docs/utils'},
+            {title: 'Soft Limits', url: '/docs/utils/soft-limits'},
+            {title: 'Gains', url: '/docs/utils/gains'},
+            {title: 'Alliance Utilities', url: '/docs/utils/alliance'},
+            {title: 'Commands', url: '/docs/utils/commands'},
+        ]
+    },
+    {
         title: 'Mechanisms',
         items: [
             {title: 'Overview', url: '/docs/mechanisms'},
@@ -24,7 +43,7 @@ const docSections = [
         ]
     },
     {
-        title: 'Swerve Drive',
+        title: 'Swerve',
         items: [
             {title: 'Overview', url: '/docs/swerve'},
             {title: 'SwerveModule Class', url: '/docs/swerve/module'},
@@ -174,8 +193,8 @@ const SidebarContent = ({expandedSections, toggleSection, currentPath}) => {
                                         <Link
                                             to={item.url}
                                             className={`block px-3 py-2 rounded-md text-sm ${
-                                                currentPath === item.url || currentPath.startsWith(`${item.url}/`)
-                                                    ? 'bg-primary-600 text-white font-medium' // Updated for better dark mode contrast
+                                                currentPath === item.url
+                                                    ? 'bg-primary-600 text-white font-medium'
                                                     : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
                                             }`}
                                         >

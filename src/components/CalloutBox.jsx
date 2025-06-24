@@ -1,4 +1,5 @@
 import {FaInfoCircle, FaExclamationTriangle, FaCheckCircle, FaLightbulb} from 'react-icons/fa';
+import {CgCommunity} from "react-icons/cg";
 
 const CalloutBox = ({type = 'info', title, children}) => {
     const getTypeConfig = () => {
@@ -9,6 +10,15 @@ const CalloutBox = ({type = 'info', title, children}) => {
                     bgColor: 'bg-amber-50 dark:bg-amber-800',
                     borderColor: 'border-amber-200 dark:border-amber-700',
                     titleColor: 'text-amber-800 dark:text-amber-300'
+                };
+            case 'credit':
+                return {
+                    icon: <CgCommunity className="h-5 w-5 text-blue-500"/>,
+                    bgColor: 'bg-blue-50 dark:bg-blue-900',
+                    borderColor: 'border-blue-200 dark:border-blue-800',
+                    titleColor: 'text-blue-900 dark:text-blue-300',
+                    textStyle: 'font-bold',
+                    descriptionStyle: 'italic'
                 };
             case 'success':
                 return {
@@ -35,20 +45,29 @@ const CalloutBox = ({type = 'info', title, children}) => {
         }
     };
 
-    const {icon, bgColor, borderColor, titleColor} = getTypeConfig();
+    const {icon, bgColor, borderColor, titleColor, textStyle = '', descriptionStyle = ''} = getTypeConfig();
 
     return (
         <div className={`rounded-lg p-4 mb-6 ${bgColor} border ${borderColor}`}>
-            <div className="flex">
-                <div className="flex-shrink-0 mt-0.5">
+            <div className="flex items-center">
+                <div className="flex-shrink-0">
                     {icon}
                 </div>
-                <div className="ml-3">
-                    {title && (
-                        <h3 className={`text-sm font-medium ${titleColor}`}>{title}</h3>
+                <div className={`ml-3 ${type === 'credit' ? 'flex items-baseline' : ''}`}>
+                    {title && type !== 'credit' && (
+                        <div className={`text-sm ${textStyle} ${titleColor} mb-1`}>
+                            {title}
+                        </div>
                     )}
-                    <div className={`mt-2 text-sm ${title ? 'text-slate-700 dark:text-slate-300' : titleColor}`}>
+                    <div className={`${type === 'credit' ? 'flex items-baseline' : ''}`}>
+                        {title && type === 'credit' && (
+                            <span className={`text-sm ${textStyle} ${titleColor}`}>
+                            {title}
+                        </span>
+                        )}
+                        <span className={` text-sm ${descriptionStyle} text-slate-700 dark:text-slate-300`}>
                         {children}
+                    </span>
                     </div>
                 </div>
             </div>

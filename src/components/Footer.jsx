@@ -40,8 +40,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Link to="/" className="flex items-center">
-              <span className="text-primary-900 dark:text-white text-2xl font-bold">FRC</span>
-              <span className="text-secondary-600 dark:text-secondary-500 text-2xl font-bold ml-1">Lib</span>
+              <span className="text-primary-900 dark:text-white text-2xl font-bold">Exca</span>
+              <span className="text-secondary-600 dark:text-secondary-500 text-2xl font-bold">Lib</span>
             </Link>
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
               A powerful Java library for FRC robotics, featuring mechanisms, custom swerve drive, and advanced control systems.
