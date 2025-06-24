@@ -1,4 +1,4 @@
-import {intoduction} from './introduction/intro.js';
+import {introduction} from './introduction/intro.js';
 import {installation} from './introduction/installation.jsx';
 import {quickStart} from "./introduction/quick-start.js";
 import {overview} from "./mechanisims/overview.js";
@@ -18,7 +18,7 @@ import {physics} from "./wrappers/physics.js";
 
 export const docContent = {
     "introduction":
-    intoduction,
+    introduction,
     "installation":
     installation,
     "quick-start":

@@ -1,7 +1,7 @@
-export const intoduction = {
+export const introduction = {
      title: "Introduction to ExcaLib",
         updated: "17.06.2025",
-        introduction: "ExcaLib is a comprehensive WpilibJ library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hradware wrappers and additional utilities to accelerate your robot development.",
+        introduction: "ExcaLib is a comprehensive WpilibJ library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hardware wrappers and additional utilities to accelerate your robot development.",
         sections: [
             {
                 id: "overview",
@@ -11,7 +11,7 @@ export const intoduction = {
                         type: "paragraph",
                         text: "ExcaLib builds on top of WPILib, the standard library for FRC, " +
                             "adding higher-level abstractions and ready-to-use components that can save your team a lot of pre-season " +
-                            "preperations and season development time. Our focus is on creating reusable and east-to-implement code that can be easily adapted to your team's specific needs."
+                            "preparations and season development time. Our focus is on creating reusable and east-to-implement code that can be easily adapted to your team's specific needs."
                     },
                     {
                         type: "paragraph",

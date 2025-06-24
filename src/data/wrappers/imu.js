@@ -61,7 +61,7 @@ export const imu = {
             ]
         },
         {
-            title: 'Avilable IMU Wrapper Functions',
+            title: 'Available IMU Wrapper Functions',
             id: 'available-functions',
             content: [
                 {

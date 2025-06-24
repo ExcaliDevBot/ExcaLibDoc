@@ -103,7 +103,7 @@ controller.triangle().onTrue(test.schedule());`
                                 >
                                     SysId Wpilib docs
                                 </a>
-                                {" "} before using this implmentation.
+                                {" "} before using this implementation.
                             </>
                         )
                     }

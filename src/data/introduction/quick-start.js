@@ -25,7 +25,7 @@ export const quickStart = {
                         type: "paragraph",
                         text: "incorporating the ExcaLib mechanisms, requires you to do it threw a subsystem class. " +
                             "Each subsystem class should extend the `SubsystemBase` class from WPILib and contain the logic for controlling your robot's hardware. " +
-                            "We recommand writing all you motor and control logic in the subsystem class."
+                            "We recommend writing all you motor and control logic in the subsystem class."
                     },
                     {
                         type: "paragraph",
@@ -57,7 +57,7 @@ public class ExampleElevator extends SubsystemBase {
 
         elevatorMechanism = new LinearExtension(
          
-                elevatorMotors,// pass threw any motor that inherites from Motor.java
+                elevatorMotors,// pass threw any motor that inherits from Motor.java
                 firstMotor::getMotorPosition, // get the elevator's position
                 // let's say our elevator is straight-up and is not angled
                 () -> Math.PI / 2, 
@@ -111,7 +111,7 @@ public class ExampleElevator extends SubsystemBase {
                         language: "java",
                         title: "Constructing a Front Left Swerve Module",
                         code: 'new SwerveModule(\n' +
-                            '    // (if your team uses a second CAN bus - you can set it in the motor\'s costructor) \n' +
+                            '    // (if your team uses a second CAN bus - you can set it in the motor\'s constructor) \n' +
                             '    new TalonFXMotor(FRONT_LEFT_DRIVE_ID, SWERVE_CANBUS), \n' +
                             '    new SparkMaxMotor(FRONT_LEFT_ROTATION_ID, SWERVE_CANBUS),\n' +
                             '    new Gains(...), // drive PID\n' +
@@ -209,7 +209,7 @@ public class ExampleElevator extends SubsystemBase {
                         type: "list",
                         ordered: false,
                         items: [
-                            "Incoporate the DriveCommand into your robot's teleop period",
+                            "Incorporate the DriveCommand into your robot's teleop period",
                             "Add a joystick or controller to control the swerve drive",
                             "Implement autonomous commands using the swerve drive"
                         ]

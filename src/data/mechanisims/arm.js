@@ -20,7 +20,7 @@ export const arm = {
                             "Supports dynamic and static setpoints",
                             "Feedforward gains",
                             "Soft velocity limiting to avoid excessive speeds",
-                            "high level commands for easy and persice control",
+                            "high level commands for easy and precise control",
                         ]
                     },
                     {

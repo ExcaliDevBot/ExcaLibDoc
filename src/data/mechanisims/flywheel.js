@@ -21,7 +21,7 @@ export const flywheel = {
                         "items": [
                             "Supports dynamic and static velocity setpoints",
                             "PID control for precise speed regulation",
-                            "Trapazoid profile constraints for acceleration and jerk",
+                            "Trapezoid profile constraints for acceleration and jerk",
                         ]
                     }
                 ]
