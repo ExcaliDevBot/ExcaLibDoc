@@ -28,6 +28,7 @@ function App() {
                     <Route path="wrappers/motors" element={<DocContent docPath="wrappers/motors"/>}/>
                     <Route path="wrappers/pyhsics" element={<DocContent docPath="wrappers/pyhsics"/>}/>
                     <Route path="wrappers/imu" element={<DocContent docPath="wrappers/imu"/>}/>
+                    <Route path="wrappers/sysid" element={<DocContent docPath="wrappers/sysid"/>}/>
 
                     <Route path="utilities" element={<DocContent docPath="utilities/overview"/>}/>
                     <Route path="utilities/motors" element={<DocContent docPath="utilities/soft-limits"/>}/>
