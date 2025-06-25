@@ -28,7 +28,7 @@ const ComingSoonSection = () => {
     },
     {
       title: "Periodic Schedulers",
-      description: "Fixed-interval task scheduling for sensor updates.",
+      description: "Fixed-interval task scheduling for various robot functions.",
       icon: Clock,
     },
     {

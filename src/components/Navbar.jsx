@@ -82,7 +82,7 @@ const Navbar = () => {
             </button>
             
             <a 
-              href="https://github.com/example/frc-library" 
+              href="https://github.com/ExcaliburFRC/ExcaLIB"
               target="_blank" 
               rel="noopener noreferrer"
               className="ml-2 p-2.5 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
