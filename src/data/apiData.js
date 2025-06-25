@@ -24,38 +24,42 @@ import {modulesHolderApi} from "./api/modulesHolderApi.js";
 import {swerveApi} from "./api/SwerveApi.js";
 import {swerveAccUtilsApi} from "./api/swerveAccUtilsApi.js";
 import {swerveModuleApi} from "./api/swerveModuleApi.js";
+import {armApi} from "./api/armApi.js";
+import {flyWheelApi} from "./api/flyWheelApi.js";
+import {linearExtensionApi} from "./api/linearExtensionApi.js";
+import {turretApi} from "./api/turretApi.js";
+import {mechanismApi} from "./api/mechanismApi.js";
 
 export const apiClasses = [
-
-    lineApi,
-    circleApi,
-    mathUtilsApi,
-    vector2DApi,
-    massApi,
-    continuousSoftLimitApi,
-    softLimitApi,
-    imuApi,
-    navXApi,
-    pigeonApi,
-    gainsApi,
-    sysidConfigApi,
-    flexMotorApi,
-    sparkMaxMotorApi,
-    motorGroupApi,
-    talonFXMotorApi,
-    motorApi,
-    directionStateApi,
-    idleStateApi,
-    allianceUtilsApi,
     alliancePoseApi,
-    odometryApi,
+    allianceUtilsApi,
+    armApi,
+    circleApi,
+    continuousSoftLimitApi,
+    directionStateApi,
+    flexMotorApi,
+    flyWheelApi,
+    gainsApi,
+    idleStateApi,
+    imuApi,
+    linearExtensionApi,
+    lineApi,
+    massApi,
+    mathUtilsApi,
+    mechanismApi,
     modulesHolderApi,
-    swerveApi,
+    motorApi,
+    motorGroupApi,
+    navXApi,
+    odometryApi,
+    pigeonApi,
+    softLimitApi,
+    sparkMaxMotorApi,
     swerveAccUtilsApi,
+    swerveApi,
     swerveModuleApi,
-
-
-
-
-
+    sysidConfigApi,
+    talonFXMotorApi,
+    turretApi,
+    vector2DApi
 ];
