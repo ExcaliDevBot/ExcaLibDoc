@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import {MdConstruction} from "react-icons/md";
 import {AiOutlineClockCircle} from "react-icons/ai";
 import {FaLightbulb} from "react-icons/fa";
+import ComingSoonSection from "../components/ComingSoon.jsx";
 
 const Home = () => {
     return (
@@ -158,135 +159,7 @@ const Home = () => {
             {/*</section>*/}
 
             {/* Coming Soon Features Section */}
-            <section className="py-24 bg-gradient-to-r from-primary-900  to-secondary-900">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
-                    <motion.div
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        viewport={{once: true}}
-                        transition={{duration: 0.7}}
-                    >
-                        <h2 className="text-7xl font-extrabold mb-6 tracking-tight">
-                            <div className="flex justify-center items-center">
-                                <MdConstruction/>
-                            </div>
-                        </h2>
-                        <h2 className="text-4xl font-extrabold mb-6 tracking-tight">
-                            Upcoming Features - Coming Soon
-                        </h2>
-                        <p className="mb-12 max-w-3xl mx-auto text-lg text-gray-200">
-                            We're constantly improving. Here are some exciting features on the horizon:
-                        </p>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
-                            {[
-                                {
-                                    title: "Advanced Vision Processing",
-                                    description: "Improved computer vision algorithms for real-time target tracking and autonomous navigation.",
-                                    icon: (
-                                        <svg
-                                            className="w-12 h-12 text-secondary-600 mb-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <circle cx="12" cy="12" r="10"/>
-                                            <path d="M14.31 8l5.74 9.94"/>
-                                            <path d="M9.69 8h11.48"/>
-                                            <path d="M7.38 12l5.74-9.94"/>
-                                        </svg>
-                                    ),
-                                },
-                                {
-                                    title: "State Manager",
-                                    description: "A robust state management system to handle complex robot states and transitions.",
-                                    icon: (
-                                        <svg
-                                            className="w-12 h-12 text-secondary-600 mb-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <rect x="3" y="3" width="7" height="7"/>
-                                            <rect x="14" y="3" width="7" height="7"/>
-                                            <rect x="14" y="14" width="7" height="7"/>
-                                            <rect x="3" y="14" width="7" height="7"/>
-                                        </svg>
-                                    ),
-                                },
-                                {
-                                    title: "AKit Adaptation",
-                                    description: "Realistic physics-based simulator to test your robot code without hardware.",
-                                    icon: (
-                                        <svg
-                                            className="w-12 h-12 text-secondary-600 mb-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                d="M21 16V8a2 2 0 0 0-2-2h-5l-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2z"/>
-                                            <line x1="7" y1="12" x2="17" y2="12"/>
-                                        </svg>
-                                    ),
-                                },
-                                {
-                                    title: "Periodic Schedulers",
-                                    description: "Schedule tasks at fixed intervals for periodic operations like sensor updates or state checks.",
-                                    icon: (<AiOutlineClockCircle className="w-12 h-12 text-secondary-600 mb-4"/>)
-                                },
-                                {
-                                    title: "Leds",
-                                    description: "built-in support for controlling LED strips to provide visual feedback on robot status.",
-                                    icon: (
-                                        <FaLightbulb className="w-12 h-12 text-secondary-600 mb-4"/>
-                                    ),
-                                },
-                                {
-                                    title: "Physics Models",
-                                    description: "Instead of creating your own mechanism models, you will be able to use our pre-built physics models.",
-                                    icon: (
-                                        <svg
-                                            className="w-12 h-12 text-secondary-600 mb-4"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path d="M16 16v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-2"/>
-                                            <circle cx="12" cy="7" r="4"/>
-                                        </svg>
-                                    ),
-                                },
-                            ].map(({title, description, icon}, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="bg-slate-50 dark:bg-slate-700 bg-opacity-30 rounded-lg p-6 flex flex-col items-center text-center shadow-lg"
-                                    initial={{opacity: 0, y: 20}}
-                                    whileInView={{opacity: 1, y: 0}}
-                                    viewport={{once: true}}
-                                    transition={{duration: 0.5, delay: index * 0.2}}
-                                >
-                                    {icon}
-                                    <h3 className="text-primary-900 dark:text-white text-xl font-semibold mb-2">{title}</h3>
-                                    <p className="text-slate-600 dark:text-slate-300">{description}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            <ComingSoonSection/>
 
 
             {/* CTA Section */}

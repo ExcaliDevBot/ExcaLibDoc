@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion';
 import { 
-  FaBrain, 
-  FaRobot, 
-  FaCode, 
-  FaDice, 
-  FaRoute, 
-  FaRocket
+  FaRobot,
+  FaCode
 } from 'react-icons/fa';
 import {TbEaseInOutControlPoints, TbWheel} from "react-icons/tb";
 import {GiCartwheel, GiCarWheel} from "react-icons/gi";
