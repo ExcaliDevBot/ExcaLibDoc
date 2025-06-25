@@ -35,7 +35,7 @@ function App() {
                     <Route path="utils/soft-limits" element={<DocContent docPath="utils/soft-limits"/>}/>
                     <Route path="utils/gains" element={<DocContent docPath="utils/gains"/>}/>
                     <Route path="utils/alliance" element={<DocContent docPath="utils/alliance"/>}/>
-                    <Route path="utils/commands" element={<DocContent docPath="utils/commands"/>}/>
+                    <Route path="utils/math" element={<DocContent docPath="utils/math"/>}/>
 
                     <Route path="swerve" element={<DocContent docPath="swerve/overview"/>}/>
                     <Route path="swerve/module" element={<DocContent docPath="swerve/module"/>}/>

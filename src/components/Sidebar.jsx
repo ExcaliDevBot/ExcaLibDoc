@@ -28,7 +28,7 @@ const docSections = [
             {title: 'Soft Limits', url: '/docs/utils/soft-limits'},
             {title: 'Gains', url: '/docs/utils/gains'},
             {title: 'Alliance Utilities', url: '/docs/utils/alliance'},
-            {title: 'Commands', url: '/docs/utils/commands'},
+            {title: 'Math Utilities', url: '/docs/utils/math'},
         ]
     },
     {

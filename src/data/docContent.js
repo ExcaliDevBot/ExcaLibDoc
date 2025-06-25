@@ -15,6 +15,7 @@ import {softlimit} from "./utils/softlimit.js";
 import {gains} from "./utils/gains.js";
 import {alliance} from "./utils/alliance.js";
 import {physics} from "./wrappers/physics.js";
+import {math} from "./utils/math.js";
 
 export const docContent = {
     "introduction":
@@ -50,5 +51,7 @@ export const docContent = {
     "utils/gains":
     gains,
     "utils/alliance":
-    alliance
+    alliance,
+    "utils/math":
+    math
 };
