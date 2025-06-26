@@ -10,9 +10,16 @@ const qaData = [
     answer: `After years of experience with FRC, we looked back and saw the need for a library that simplifies common tasks, and removes redundant boilerplate code, for mechanisms and hardware wrappers. ExcaLib is designed to be a comprehensive solution that allows teams to focus on building their robots without getting bogged down in low-level details.`,
     tags: ['getting started', 'introduction', 'excalib']
   },
+  {
+    id: 2,
+    category: 'Getting Started',
+    question: 'Is the library ready for use?',
+    answer: `Yes, ExcaLib is ready for use! It has been tested and used by Team Excalibur #6738 in the 2025 season, competing in 5 events. While it is still evolving, it provides a solid foundation for building your robot.`,
+    tags: ['getting started', 'status', 'excalib']
+  },
 ];
 
-const categories = ['All', 'Getting Started', 'Swerve Drive', 'Mechanisms', 'Vision', 'Troubleshooting', 'Performance'];
+const categories = ['All', 'Getting Started', 'Swerve Drive', 'Troubleshooting', 'Performance'];
 
 const QA = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,7 +56,7 @@ const QA = () => {
           Questions & Answers
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-          Find answers to common questions about FRCLib
+          Find answers to common questions about ExcaLib
         </p>
 
         <button
@@ -224,12 +231,20 @@ const QA = () => {
 
               <div className="space-y-3">
                 <a
-                  href="https://github.com/example/frc-library/issues/new"
+                  href="https://github.com/ExcaliburFRC/ExcaLIB/issues/new"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center px-4 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                 >
                   Create GitHub Issue
+                </a>
+                <a
+                  href="https://github.com/example/frc-library/issues/new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center px-4 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  Reply to the Cheif Delphi Thread
                 </a>
 
                 <button

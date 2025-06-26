@@ -28,7 +28,7 @@ const ApiReference = () => {
       </h1>
 
       <p className="text-lg text-slate-700 dark:text-slate-300 mb-8">
-        Comprehensive documentation for all classes and methods in the FRCLib library.
+        Comprehensive documentation for all classes and methods in the ExcaLib library.
       </p>
 
       <div className="mb-8 relative">
