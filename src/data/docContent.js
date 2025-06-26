@@ -16,6 +16,8 @@ import {gains} from "./utils/gains.js";
 import {alliance} from "./utils/alliance.js";
 import {physics} from "./wrappers/physics.js";
 import {math} from "./utils/math.js";
+import {SwerveOverview} from "./swerve/overview.js";
+import {SwerveModule} from "./swerve/module.js";
 
 export const docContent = {
     "introduction":
@@ -53,5 +55,9 @@ export const docContent = {
     "utils/alliance":
     alliance,
     "utils/math":
-    math
+    math,
+    "swerve/overview":
+    SwerveOverview,
+    "swerve/module":
+    SwerveModule
 };

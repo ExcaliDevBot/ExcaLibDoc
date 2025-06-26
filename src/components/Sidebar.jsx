@@ -47,9 +47,8 @@ const docSections = [
         items: [
             {title: 'Overview', url: '/docs/swerve'},
             {title: 'SwerveModule Class', url: '/docs/swerve/module'},
-            {title: 'SwerveDrive Class', url: '/docs/swerve/drive'},
-            {title: 'Path Following', url: '/docs/swerve/path-following'},
-            {title: 'Custom Kinematics', url: '/docs/swerve/kinematics'},
+            {title: 'ModulesHolder Class', url: '/docs/swerve/holder'},
+            {title: 'Swerve Class', url: '/docs/swerve/swerve'},
         ]
     },
     {

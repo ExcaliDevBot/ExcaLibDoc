@@ -1,7 +1,7 @@
 export const mechanism = {
     title: "The Generic Mechanism",
     updated: "june 20, 2025",
-    introduction: "The Mechanism Class is a high-level abstraction for controlling various robot subsystems. Designed to be flexible and extensible",
+    introduction: "The Mechanism Class is a high-level abstraction for controlling various robot subsystems. Designed to be flexible and extensible.",
     sections: [
         {
             id: "Overview",

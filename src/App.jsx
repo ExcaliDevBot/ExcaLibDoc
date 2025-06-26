@@ -40,9 +40,8 @@ function App() {
 
                     <Route path="swerve" element={<DocContent docPath="swerve/overview"/>}/>
                     <Route path="swerve/module" element={<DocContent docPath="swerve/module"/>}/>
-                    <Route path="swerve/drive" element={<DocContent docPath="swerve/drive"/>}/>
-                    <Route path="swerve/path-following" element={<DocContent docPath="swerve/path-following"/>}/>
-                    <Route path="swerve/kinematics" element={<DocContent docPath="swerve/kinematics"/>}/>
+                    <Route path="swerve/holder" element={<DocContent docPath="swerve/holder"/>}/>
+                    <Route path="swerve/swerve" element={<DocContent docPath="swerve/swerve"/>}/>
 
                     <Route path="advanced/pose-estimation" element={<DocContent docPath="advanced/pose-estimation"/>}/>
                     <Route path="advanced/auto-balance" element={<DocContent docPath="advanced/auto-balance"/>}/>
