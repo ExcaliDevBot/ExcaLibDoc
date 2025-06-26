@@ -7,6 +7,7 @@ import Examples from './pages/Examples';
 import NotFound from './pages/NotFound';
 import DocContent from './pages/DocContent';
 import {alliance} from "./data/utils/alliance.js";
+import QA from "./pages/QA.jsx";
 
 function App() {
     return (
@@ -50,6 +51,7 @@ function App() {
                 </Route>
                 <Route path="api-reference" element={<ApiReference/>}/>
                 <Route path="examples" element={<Examples/>}/>
+                <Route path="questions" element={<QA/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>
         </Routes>

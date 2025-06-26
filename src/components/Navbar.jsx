@@ -58,6 +58,7 @@ const Navbar = () => {
               <NavLink to="/docs" label="Documentation" />
               <NavLink to="/examples" label="Examples" />
               <NavLink to="/api-reference" label="API Reference" />
+              <NavLink to="/questions" label="Q&A" />
             </nav>
           </div>
           
@@ -115,7 +116,8 @@ const Navbar = () => {
               <MobileNavLink to="/docs" label="Documentation" />
               <MobileNavLink to="/examples" label="Examples" />
               <MobileNavLink to="/api-reference" label="API Reference" />
-              
+              <MobileNavLink to="/questions" label="Q&A" />
+
               <div className="pt-2 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <HiSearch className="h-5 w-5 text-slate-400" />
