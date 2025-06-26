@@ -23,7 +23,7 @@ export const quickStart = {
                 content: [
                     {
                         type: "paragraph",
-                        text: "incorporating the ExcaLib mechanisms, requires you to do it threw a subsystem class. " +
+                        text: "incorporating the ExcaLib mechanisms, requires you to do it through a subsystem class. " +
                             "Each subsystem class should extend the `SubsystemBase` class from WPILib and contain the logic for controlling your robot's hardware. " +
                             "We recommend writing all you motor and control logic in the subsystem class."
                     },
@@ -43,7 +43,7 @@ public class ExampleElevator extends SubsystemBase {
     MotorGroup elevatorMotors;
 
     public ExampleElevator() {
-        // create two motor controllers, and pass threw the CAN id
+        // create two motor controllers, and pass through the CAN id
         firstMotor = new TalonFXMotor(FIRST_MOTOR_ID);
         secondMotor = new TalonFXMotor(SECOND_MOTOR_ID);
 
@@ -57,7 +57,7 @@ public class ExampleElevator extends SubsystemBase {
 
         elevatorMechanism = new LinearExtension(
          
-                elevatorMotors,// pass threw any motor that inherits from Motor.java
+                elevatorMotors,// pass through any motor that inherits from Motor.java
                 firstMotor::getMotorPosition, // get the elevator's position
                 // let's say our elevator is straight-up and is not angled
                 () -> Math.PI / 2, 
@@ -133,7 +133,7 @@ public class ExampleElevator extends SubsystemBase {
                     },
                     {
                         type: "paragraph",
-                        text: "let's create a ModulesHolder object for our swerve drive, so we will pass threw four modules (like the one we created above):"
+                        text: "let's create a ModulesHolder object for our swerve drive, so we will pass through four modules (like the one we created above):"
                     },
                     {
                         type: "code",
@@ -156,7 +156,7 @@ public class ExampleElevator extends SubsystemBase {
                     },
                     {
                         type: "paragraph",
-                        text: "Finally, constructing swerve subsystem is very simple, you will need to pass threw three arguments :"
+                        text: "Finally, constructing swerve subsystem is very simple, you will need to pass through three arguments :"
                     },
                     {
                         type: "list",

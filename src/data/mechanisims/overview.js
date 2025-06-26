@@ -21,7 +21,7 @@ export const overview = {
                     type: "callout",
                     calloutType: "warning",
                     title: "Units",
-                    text: "All threw the library we use meters (m) for the distance unit, and radians (rad) for angle measurements. "
+                    text: "All throughout the library we use meters (m) for the distance unit, and radians (rad) for angle measurements. "
                 }
 
             ]
@@ -110,7 +110,7 @@ public ExampleFlyWheel() {
     flyWheelMotor = new TalonFXMotor(0); // new TalonFXMotor with CAN ID 0
         
      flyWheelMechanism = new FlyWheel(
-          flyWheelMotor, // pass threw the motor
+          flyWheelMotor, // pass through the motor
           0.5, // set the max acceleration (rad/s^2)
           0.3, // set the max jerk (rad/s^3)
           new Gains() //empty constructor for the PID gains, you can set them later

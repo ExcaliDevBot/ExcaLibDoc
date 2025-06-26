@@ -24,7 +24,7 @@ export const gains = {
                     "type": "callout",
                     "calloutType": "success",
                     "title": "In ExcaLib",
-                    "text": "Passing threw a Gains object is not a rare occurrence in ExcaLib. Familiarizing yourself with the class is very important."
+                    "text": "Passing through a Gains object is not a rare occurrence in ExcaLib. Familiarizing yourself with the class is very important."
                 },
                 {
                     type: "paragraph",
@@ -107,7 +107,7 @@ export const gains = {
                     "type": "callout",
                     "calloutType": "tip",
                     "title": "Occurs often",
-                    "text": "Passing threw a gains object appears nearly in every mechanism in ExcaLib."
+                    "text": "Passing through a gains object appears nearly in every mechanism in ExcaLib."
                 },
             ]
         },
