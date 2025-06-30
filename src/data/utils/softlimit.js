@@ -140,9 +140,7 @@ export const softlimit = {
 }
 `
                 },
-
             ]
-
         },
     ]
 }

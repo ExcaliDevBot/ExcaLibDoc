@@ -114,7 +114,7 @@ export const SwerveOverview = {
                         "ChassisSpeeds Input - as a vector, this will probably be provided by a joystick or other input device",
 
                     ]
-                },{
+                }, {
                     "type": "callout",
                     "calloutType": "warning",
                     "title": "Gyro Calibration",
@@ -127,7 +127,7 @@ export const SwerveOverview = {
             title: "Stuff to Know Before Using Swerve",
             content: [
                 {
-                  type: "paragraph",
+                    type: "paragraph",
                     text: "Before using the swerve drive, there are a few things you should know for the setup:"
                 },
                 {
@@ -142,6 +142,110 @@ export const SwerveOverview = {
                         ['Translation2d moduleLocation', 'Physical location of this module on the robot, in perspective to the center of the robot.'],
                     ],
                 }
+            ]
+        },
+        {
+            id: "Overview",
+            title: "End Goal",
+            content: [
+                {
+                    type: "paragraph",
+                    text: "In the end, to connect the swerve drive command to the controller, you will need to" +
+                        " use the <Swerve> class to create a swerve drive object, and then use the" +
+                        " <driveCommand()> method to drive the robot. "
+                },
+                {
+                    type: "paragraph",
+                    text: "We recommend to create a <createSwerve()> method that returns a <Swerve> object, and then use that object to drive the robot." +
+                        " This method should be placed where all of the constants are available, such as in the <Constants> class."
+                },
+                {
+                    type: "paragraph",
+                    text: "In the examples tab there is a full configured swerve drive that you can use as a reference."
+                },
+            ]
+        },
+        {
+            id: "Overview",
+            title: "Driving the Swerve ",
+            content: [
+                {
+                    type: "paragraph",
+                    text: "Use the <driveCommand()> method to create a command that drives the robot. The method is simple to use and takes" +
+                        " a <Vector2d> as the velocityMPS. This vector represents the velocity of the robot in meters per second." +
+                        " The <driveCommand()> method also takes a <DoubleSupplier> as the rotation, which represents the rotation of the robot in radians per second." +
+                        "Finally, the method takes a <BooleanSupplier> to determine if the robot should drive in field-relative mode or not."
+                },
+                {
+                    type: "paragraph",
+                    text: "This is a example of how to use the <driveCommand()> method:"
+                },
+                {
+                    "type": "code",
+                    "language": "java",
+                    "title": "Drive Command Example",
+                    "code": `Swerve swerve = SwerveConstants.configureSwerve(new Pose2d()); // takes an initial pose
+CommandPS5Controller driveController = new CommandPS5Controller(0);
+
+// set the default command for the swerve drive
+swerve.setDefaultCommand(
+        swerve.driveCommand(
+                // joystick position (-1 to 1) times the max velocity for getting the correct values
+                () -> new Vector2D(
+                        -driveController.getLeftY() * MAX_VEL, 
+                        -driveController.getLeftX() * MAX_VEL
+                ),
+                // joystick value (-1 to 1) times the max rotation for getting the correct values
+                () -> driveController.getRightX() * MAX_OMEGA_RAD_PER_SEC,
+                // driving field orianted
+                () -> true
+        )
+);`
+                },
+                {
+                    type: "paragraph",
+                    text: "This is a example of how we used the <driveCommand()> method, you can change the" +
+                        " joystick values to match your controller's layout. The <MAX_VEL> and <MAX_OMEGA_RAD_PER_SEC>" +
+                        " are constants that represent the maximum velocity and rotation of the robot, respectively."
+                },
+            ]
+        },
+        {
+            id: "Overview",
+            title: "Extra Features",
+            content: [
+                {
+                    type: "paragraph",
+                    text: "We recommend using a decelerator to make your joystick position smoother, this can be done by using the" +
+                        " <InterpolatingDoubleTreeMap> class. This class allows you to set a deceleration rate and a minimum value, which will" +
+                        " make the joystick position smoother and more responsive."
+                },
+                {
+                    type: "paragraph",
+                    text: "Here is an example of how to use the <InterpolatingDoubleTreeMap> class:"
+                },
+                                {
+                    "type": "code",
+                    "language": "java",
+                    "title": "Drive Command Example",
+                    "code": `InterpolatingDoubleTreeMap driverInterpolation = new InterpolatingDoubleTreeMap();
+
+driverInterpolation.put(0.0, 1.0); // if the L2 axis is fully extended, the robot will drive at full speed
+driverInterpolation.put(1.0, 0.25); // if the L2 axis is fully closed, the robot will drive up to 25% speed
+
+swerve.driveCommand(
+    () -> new Vector2D(
+        // depending on the L2 axis, the robot will drive at a different speed
+        -driveController.getLeftY() * MAX_VEL * driverInterpolation.get(driveController.getL2Axis()), 
+        -driveController.getLeftX() * MAX_VEL * driverInterpolation.get(driveController.getL2Axis())
+    ),
+    () -> driveController.getRightX() * MAX_ANGLE * driverInterpolation.get(driveController.getL2Axis()),
+    () -> true
+)
+
+`
+                },
+
             ]
         },
     ]
