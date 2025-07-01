@@ -192,8 +192,8 @@ swerve.setDefaultCommand(
         swerve.driveCommand(
                 // joystick position (-1 to 1) times the max velocity for getting the correct values
                 () -> new Vector2D(
-                        -driveController.getLeftY() * MAX_VEL, 
-                        -driveController.getLeftX() * MAX_VEL
+                        -driveController.getLeftY() * MAX_VEL, // x factor of the joystick
+                        -driveController.getLeftX() * MAX_VEL // y factor of the joystick
                 ),
                 // joystick value (-1 to 1) times the max rotation for getting the correct values
                 () -> driveController.getRightX() * MAX_OMEGA_RAD_PER_SEC,

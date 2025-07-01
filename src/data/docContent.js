@@ -18,6 +18,7 @@ import {physics} from "./wrappers/physics.js";
 import {math} from "./utils/math.js";
 import {SwerveOverview} from "./swerve/overview.js";
 import {SwerveModule} from "./swerve/module.js";
+import {SwerveHolder} from "./swerve/holder.js";
 
 export const docContent = {
     "introduction":
@@ -59,5 +60,7 @@ export const docContent = {
     "swerve/overview":
     SwerveOverview,
     "swerve/module":
-    SwerveModule
+    SwerveModule,
+    "swerve/holder":
+    SwerveHolder
 };
