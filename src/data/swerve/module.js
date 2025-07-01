@@ -60,7 +60,7 @@ export const SwerveModule = {
                     type: "paragraph",
                     text: "Here is a simple example of how to create a /*SwerveModule*/:"
                 },
-               {
+                {
                     "type": "code",
                     "language": "java",
                     "title": "Creating a SwerveModule",
