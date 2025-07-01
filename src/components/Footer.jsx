@@ -17,7 +17,7 @@ const Footer = () => {
     {
       title: 'Community',
       links: [
-        { text: 'GitHub', href: 'https://github.com/example/frc-library', external: true },
+        { text: 'GitHub', href: 'https://github.com/ExcaliburFRC/ExcaLib', external: true },
         { text: 'Discord', href: '#', external: true },
         { text: 'Chief Delphi', href: 'https://www.chiefdelphi.com/', external: true },
         { text: 'FRC Blog', href: 'https://www.firstinspires.org/robotics/frc/blog', external: true },

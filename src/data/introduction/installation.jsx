@@ -20,13 +20,13 @@ installation = {
                     items: [
                         "WPILib 2025.x.x or newer",
                         "Java 17 or newer",
-                        "Gradle 7.x or newer",
-                        "WpiLib VS Code or IntelliJ IDEA with the FRC plugins"
+                        "WpiLib VS Code or IntelliJ IDEA with the FRC plugins",
+                        "project set up with WPILib the following libraries",
                     ]
                 }
             ]
         },
-        {
+        /*{
             id: "choose-version",
             title: "Choose Your Version",
             content: [
@@ -70,7 +70,7 @@ installation = {
                 },
                 {
                     type: "paragraph",
-                    text: "*/*This version requires additional libraries, see below.*/"
+                    text: "*!/!*This version requires additional libraries, see below.*!/"
                 },
                 {
                     type: "paragraph",
@@ -87,7 +87,7 @@ installation = {
                     code: `https://raw.githubusercontent.com/ExcaliburFRC/ExcaLIB/v0.1.0-skeleton/ExcaLIB.json`
                 }
             ]
-        },
+        },*/
         {
             id: "gradle",
             title: "Adding the All-in-one Version to Your Project",
@@ -130,7 +130,7 @@ installation = {
                     type: "code",
                     language: "markdown",
                     title: "link",
-                    code: `https://raw.githubusercontent.com/ExcaliburFRC/ExcaLIB/v0.1.0/ExcaLIB.json`
+                    code: `https://raw.githubusercontent.com/ExcaliburFRC/ExcaLib/pre-release/ExcaLib.json`
                 },
                 {
                     type: "paragraph",
@@ -162,6 +162,12 @@ installation = {
             id: "gradle",
             title: "Installing Monologue",
             content: [
+                 {
+                    "type": "callout",
+                    "calloutType": "info",
+                    "title": "Migration",
+                    "text": "We are currently migrating from Monologue to the built in Epilogue."
+                },
                 {
                     type: "paragraph",
                     text: "In order to install Monologue, you can follow theses steps:"
@@ -209,6 +215,7 @@ installation = {
             id: "gradle",
             title: "Using Monologue",
             content: [
+
                 {
                     type: "paragraph",
                     text: "This is a simple example of how to use Monologue in your robot code:"
@@ -294,7 +301,8 @@ installation = {
                             {" "}for more information.
                         </>
                     )
-                }
+                },
+
             ]
         }
     ]

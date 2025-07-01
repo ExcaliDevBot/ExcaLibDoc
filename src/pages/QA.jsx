@@ -17,6 +17,13 @@ const qaData = [
     answer: `Yes, ExcaLib is ready for use! It has been tested and used by Team Excalibur #6738 in the 2025 season, competing in 5 events. While it is still evolving, it provides a solid foundation for building your robot.`,
     tags: ['getting started', 'status', 'excalib']
   },
+    {
+    id: 3,
+    category: 'Performance',
+    question: 'Why using monologue?',
+    answer: `We used monologue for all the 2025 season, but we are replacing it with the built in Epilogue, this will make the installation process easier and more streamlined. Monologue is a powerful logging library that allows for flexible and efficient logging, which is essential for debugging and monitoring your robot's performance.`,
+    tags: ['telemetry', 'logging', 'epilogue']
+  },
 ];
 
 const categories = ['All', 'Getting Started', 'Swerve Drive', 'Troubleshooting', 'Performance'];
