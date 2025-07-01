@@ -61,5 +61,5 @@ export const apiClasses = [
     sysidConfigApi,
     talonFXMotorApi,
     turretApi,
-    vector2DApi
+    vector2DApi,
 ];
