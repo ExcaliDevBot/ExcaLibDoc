@@ -56,7 +56,9 @@ const Navbar = () => {
                         <nav className="hidden md:ml-10 md:flex md:space-x-8">
                             <NavLink to="/" label="Home"/>
                             <NavLink to="/docs" label="Documentation"/>
+{/*
                             <NavLink to="/examples" label="Examples"/>
+*/}
                             <NavLink to="/api-reference" label="API Reference"/>
                             <NavLink to="/questions" label="Q&A"/>
                         </nav>
@@ -116,7 +118,9 @@ const Navbar = () => {
                         <nav className="px-4 py-3 space-y-1">
                             <MobileNavLink to="/" label="Home"/>
                             <MobileNavLink to="/docs" label="Documentation"/>
+{/*
                             <MobileNavLink to="/examples" label="Examples"/>
+*/}
                             <MobileNavLink to="/api-reference" label="API Reference"/>
                             <MobileNavLink to="/questions" label="Q&A"/>
 
