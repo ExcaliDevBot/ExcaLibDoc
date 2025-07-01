@@ -19,7 +19,7 @@ const Footer = () => {
       links: [
         { text: 'GitHub', href: 'https://github.com/ExcaliburFRC/ExcaLib', external: true },
         { text: 'Discord', href: '#', external: true },
-        { text: 'Chief Delphi', href: 'https://www.chiefdelphi.com/', external: true },
+        { text: 'Chief Delphi', href: 'https://www.chiefdelphi.com/t/introducing-excalib-a-mechanism-motor-wrappers-and-utilities-wpilibj-command-library/503814', external: true },
         { text: 'FRC Blog', href: 'https://www.firstinspires.org/robotics/frc/blog', external: true },
       ],
     },

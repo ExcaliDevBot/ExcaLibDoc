@@ -246,7 +246,7 @@ const QA = () => {
                   Create GitHub Issue
                 </a>
                 <a
-                  href="https://github.com/example/frc-library/issues/new"
+                  href="https://www.chiefdelphi.com/t/introducing-excalib-a-mechanism-motor-wrappers-and-utilities-wpilibj-command-library/503814"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center px-4 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
