@@ -51,6 +51,13 @@ export const alliance = {
             title: "AlliancePose",
             content: [
                 {
+                    "type": "callout",
+                    "calloutType": "warning",
+                    "title": "Initialization",
+                    "text": "This class egt the current alliance from the initial alliance on the robot's DriverStation. Please ensure that " +
+                        "you select the correct alliance before using this class. Later on, we will make the alliance to change dynamically. "
+                },
+                {
                     type: "paragraph",
                     text: "The /*AllianceUtils*/ class has a nested class called /*AlliancePose*/ that represents a Pose2d pose " +
                         "relative to the current alliance. It includes methods for converting between alliance-relative and field-relative poses."
@@ -89,7 +96,6 @@ export const alliance = {
                     "text": "Using the AlliancePose class is recommended especially when defining Pose2d constants on the field."
                 },
             ]
-
         },
     ]
 }
