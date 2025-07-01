@@ -3,9 +3,6 @@ import Hero from '../components/Hero';
 import FeatureGrid from '../components/FeatureGrid';
 import CodeBlock from '../components/CodeBlock';
 import {Link} from 'react-router-dom';
-import {MdConstruction} from "react-icons/md";
-import {AiOutlineClockCircle} from "react-icons/ai";
-import {FaLightbulb} from "react-icons/fa";
 import ComingSoonSection from "../components/ComingSoon.jsx";
 
 const Home = () => {

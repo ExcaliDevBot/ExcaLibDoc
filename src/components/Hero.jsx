@@ -39,7 +39,7 @@ const Hero = () => {
             className="flex justify-center"
           >
             <span className="inline-flex items-center rounded-full bg-secondary-600/10 px-3 py-1 text-sm font-medium text-secondary-500 ring-1 ring-inset ring-secondary-600/20">
-              Version 1.0.0 Available Now
+              Pre-Release Version Available Now
             </span>
           </motion.div>
           
