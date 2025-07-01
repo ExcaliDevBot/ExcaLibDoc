@@ -6,7 +6,6 @@ import ApiReference from './pages/ApiReference';
 import Examples from './pages/Examples';
 import NotFound from './pages/NotFound';
 import DocContent from './pages/DocContent';
-import {alliance} from "./data/utils/alliance.js";
 import QA from "./pages/QA.jsx";
 
 function App() {
