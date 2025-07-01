@@ -8,13 +8,14 @@ import {
   Lightbulb,
   Atom
 } from 'lucide-react';
+import {PiGraph} from "react-icons/pi";
 
 const ComingSoonSection = () => {
   const upcomingFeatures = [
     {
-      title: "Advanced Vision Processing",
-      description: "Real-time target tracking and autonomous navigation algorithms.",
-      icon: Eye,
+      title: "Epilogue",
+      description: "Built in logging system for debugging and monitoring.",
+      icon: PiGraph,
     },
     {
       title: "State Manager",
