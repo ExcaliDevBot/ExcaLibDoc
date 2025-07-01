@@ -43,23 +43,14 @@ const docSections = [
         ]
     },
     {
-        title: 'Swerve',
+        title: 'Swerve - Unavailable',
         items: [
-            {title: 'Overview', url: '/docs/swerve'},
-            {title: 'SwerveModule Class', url: '/docs/swerve/module'},
-            {title: 'ModulesHolder Class', url: '/docs/swerve/holder'},
-            {title: 'Swerve Class', url: '/docs/swerve/swerve'},
+            {title: 'Overview', url: '/docs/unavailable'},
+            {title: 'SwerveModule Class', url: '/docs/unavailable'},
+            {title: 'ModulesHolder Class', url: '/docs/unavailable'},
+            {title: 'Swerve Class', url: '/docs/unavailable'},
         ]
     },
-    {
-        title: 'Advanced Features',
-        items: [
-            {title: 'Pose Estimation', url: '/docs/advanced/pose-estimation'},
-            {title: 'Auto-balancing', url: '/docs/advanced/auto-balance'},
-            {title: 'Vision Integration', url: '/docs/advanced/vision'},
-            {title: 'Command-Based Framework', url: '/docs/advanced/command-based'},
-        ]
-    }
 ];
 
 const Sidebar = () => {

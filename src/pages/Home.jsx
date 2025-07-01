@@ -4,11 +4,111 @@ import FeatureGrid from '../components/FeatureGrid';
 import CodeBlock from '../components/CodeBlock';
 import {Link} from 'react-router-dom';
 import ComingSoonSection from "../components/ComingSoon.jsx";
+import {FaExclamation, FaTimes} from "react-icons/fa";
+import {useState} from "react";
+
 
 const Home = () => {
+    const [dismissedAnnouncement, setDismissedAnnouncement] = useState(false);
+    const announcements = [
+        {
+            id: 'release',
+            type: 'release',
+            icon: <FaExclamation className="h-5 w-5"/>,
+            title: 'Incomplete Release',
+            message: 'This release does not include the Swerve Drive implementation yet. It is currently under extensive testing and will be available in version v.1.0.0.',
+            action: {text: 'View Release Notes', link: '/docs'},
+            gradient: 'from-red-500 to-red-600',
+            bgColor: 'bg-red-50 dark:bg-red-900/20',
+            borderColor: 'border-gray-800 dark:border-gray-800',
+            textColor: 'text-gray-900 dark:text-gray-300'
+        }
+    ];
+
+    const currentAnnouncement = announcements[0];
+
     return (
         <div>
             <Hero/>
+
+            {/* Announcement Section */}
+            {!dismissedAnnouncement && (
+                <motion.section
+                    initial={{opacity: 0, y: -20}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: -20}}
+                    className="relative overflow-hidden"
+                >
+                    {/* Gradient Background */}
+                    <div className={`bg-gradient-to-r ${currentAnnouncement.gradient} py-1`}>
+                        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                            <motion.div
+                                initial={{opacity: 0, scale: 0.95}}
+                                animate={{opacity: 1, scale: 1}}
+                                transition={{delay: 0.2}}
+                                className={`relative rounded-xl ${currentAnnouncement.bgColor} border ${currentAnnouncement.borderColor} p-6 my-4 shadow-lg backdrop-blur-sm`}
+                            >
+                                {/* Decorative Elements */}
+                                <div
+                                    className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+
+                                <div className="flex items-start justify-between">
+                                    <div className="flex items-start space-x-4">
+                                        {/* Icon */}
+                                        <div
+                                            className={`flex-shrink-0 p-2 rounded-lg bg-gradient-to-r ${currentAnnouncement.gradient} text-white shadow-md`}>
+                                            {currentAnnouncement.icon}
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className={`text-lg font-semibold ${currentAnnouncement.textColor} mb-1`}>
+                                                {currentAnnouncement.title}
+                                            </h3>
+                                            <p className={`text-sm ${currentAnnouncement.textColor} opacity-90 mb-3`}>
+                                                {currentAnnouncement.message}
+                                            </p>
+
+                                            {/* Action Button */}
+                                            <Link
+                                                to={currentAnnouncement.action.link}
+                                                className={`inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r ${currentAnnouncement.gradient} rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200`}
+                                            >
+                                                {currentAnnouncement.action.text}
+                                                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                                     stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                                          d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                                </svg>
+                                            </Link>
+                                        </div>
+                                    </div>
+
+                                    {/* Dismiss Button */}
+                                    <button
+                                        onClick={() => setDismissedAnnouncement(true)}
+                                        className={`flex-shrink-0 p-2 rounded-lg ${currentAnnouncement.textColor} hover:bg-black/10 dark:hover:bg-white/10 transition-colors`}
+                                    >
+                                        <FaTimes className="h-4 w-4"/>
+                                    </button>
+                                </div>
+
+                                {/* Floating Particles Effect */}
+                                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                                    <div
+                                        className="absolute top-4 right-8 w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+                                    <div
+                                        className="absolute bottom-6 left-12 w-1 h-1 bg-white/30 rounded-full animate-pulse"
+                                        style={{animationDelay: '1s'}}></div>
+                                    <div
+                                        className="absolute top-8 left-1/3 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse"
+                                        style={{animationDelay: '2s'}}></div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.section>
+            )}
 
             <FeatureGrid/>
 
