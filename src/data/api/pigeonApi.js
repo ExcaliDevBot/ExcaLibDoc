@@ -2,6 +2,12 @@ export const pigeonApi = {
     name: 'Pigeon',
     package: 'frc.excalib.control.imu',
     description: 'Implementation of the IMU interface using the Pigeon2 sensor. Provides orientation and acceleration data, with support for rotation offsets.',
+     parentClasses: [
+        {
+            name: "Pigeon2",
+            description: "Class description for the Pigeon 2 IMU sensor that measures orientation."
+        }
+    ],
     methods: [
         {
             name: 'Pigeon',

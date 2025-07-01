@@ -2,6 +2,12 @@ export const linearExtensionApi = {
     name: 'LinearExtension',
     package: 'frc.excalib.mechanisms.linear_extension',
     description: 'Represents a linear extension mechanism with PID and feedforward control, using motion profiling to smoothly reach a target extension length.',
+    parentClasses: [
+        {
+            name: "Mechanism",
+            description: "A ExcaLib class representing a generic Mechanism."
+        }
+    ],
     methods: [
         {
             name: 'LinearExtension',

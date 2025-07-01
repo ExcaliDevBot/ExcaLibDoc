@@ -2,6 +2,12 @@ export const flexMotorApi = {
     name: 'FlexMotor',
     package: 'frc.excalib.control.motor.controllers',
     description: 'Implementation of the Motor interface using the Spark Flex motor controller, providing methods for motor control, configuration, and telemetry.',
+    parentClasses: [
+        {
+            name: "SparkFlex",
+            description: "Base class for Spark Flex motor controllers, providing common functionality for motor control."
+        }
+    ],
     methods: [
         {
             name: 'FlexMotor',

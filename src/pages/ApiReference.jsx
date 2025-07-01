@@ -67,12 +67,38 @@ const ApiReference = () => {
                             )}
                         </button>
 
+
                         {expandedClass === cls.name && (
                             <div className="p-4 border-t border-slate-200 dark:border-slate-700">
                                 <p className="text-slate-700 dark:text-slate-300 mb-6">
                                     {cls.description}
                                 </p>
 
+                                {cls.parentClasses && cls.parentClasses.length > 0 && (
+                                    <div className="mb-6 bg-slate-50 dark:bg-slate-700 p-3 rounded-md shadow-sm">
+                                        <h3 className="text-md font-bold text-primary-900 dark:text-white mb-3">
+                                            Parent Classes
+                                        </h3>
+                                        <ul className="space-y-2">
+                                            {cls.parentClasses.map((parent, index) => (
+                                                <li key={index}
+                                                    className="flex items-start p-2 bg-white dark:bg-slate-800 rounded-md border-l-4 border-primary-500 shadow-sm">
+                                                    <div className="mr-3 text-primary-500 dark:text-primary-400">
+                                                        <FaChevronRight className="h-4 w-4"/>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-sm font-semibold text-primary-800 dark:text-primary-400">
+                                                            {parent.name}
+                                                        </h4>
+                                                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                                                            {parent.description}
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                                 {cls.values && cls.values.length > 0 && (
                                     <div className="mb-6">
                                         <h3 className="text-lg font-semibold text-primary-900 dark:text-white mb-4">

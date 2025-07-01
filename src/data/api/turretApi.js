@@ -2,6 +2,12 @@ export const turretApi = {
     name: 'Turret',
     package: 'frc.excalib.mechanisms.turret',
     description: 'Represents a turret mechanism capable of rotating to a specific angle using PID control and respecting rotational limits.',
+     parentClasses: [
+        {
+            name: "Mechanism",
+            description: "A ExcaLib class representing a generic Mechanism."
+        }
+    ],
     methods: [
         {
             name: 'Turret',

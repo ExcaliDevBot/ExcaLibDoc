@@ -2,6 +2,12 @@ export const continuousSoftLimitApi = {
     name: 'ContinuousSoftLimit',
     package: 'frc.excalib.control.limits',
     description: 'Represents a one-dimensional range for systems with continuous input, defined by two dynamic limits.',
+    parentClasses: [
+        {
+            name: "SoftLimit",
+            description: "A class representing the allowed one dimensional range for the state of a system."
+        }
+    ],
     methods: [
         {
             name: 'ContinuousSoftLimit',

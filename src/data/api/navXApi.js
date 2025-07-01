@@ -2,6 +2,12 @@ export const navXApi = {
     name: 'NavX',
     package: 'frc.excalib.control.imu',
     description: 'Implementation of the IMU interface using the NavX sensor, providing orientation and acceleration data with support for rotation offsets and logging.',
+    parentClasses: [
+        {
+            name: "AHRS",
+            description: "The AHRS class provides an interface to AHRS capabilities of the KauaiLabs navX"
+        }
+    ],
     methods: [
         {
             name: 'NavX',

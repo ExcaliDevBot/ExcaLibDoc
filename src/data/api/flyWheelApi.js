@@ -2,6 +2,12 @@ export const flyWheelApi = {
     name: 'FlyWheel',
     package: 'frc.excalib.mechanisms.fly_wheel',
     description: 'Represents a FlyWheel mechanism with velocity control using PID and feedforward logic.',
+     parentClasses: [
+        {
+            name: "Mechanism",
+            description: "A ExcaLib class representing a generic Mechanism."
+        }
+    ],
     methods: [
         {
             name: 'FlyWheel',

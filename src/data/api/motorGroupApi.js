@@ -2,6 +2,12 @@ export const motorGroupApi = {
     name: 'MotorGroup',
     package: 'frc.excalib.control.motor.controllers',
     description: 'Represents a group of motors that can be controlled together as a single unit. Implements the Motor interface to provide unified control and telemetry for multiple motors.',
+    parentClasses: [
+        {
+            name: "Motor",
+            description: "Interface representing a motor controller with various control and configuration methods."
+        }
+    ],
     methods: [
         {
             name: 'MotorGroup',

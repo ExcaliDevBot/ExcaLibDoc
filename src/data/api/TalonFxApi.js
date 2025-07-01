@@ -2,6 +2,12 @@ export const talonFXMotorApi = {
     name: 'TalonFXMotor',
     package: 'frc.excalib.control.motor.controllers',
     description: 'Implementation of the Motor interface using the Talon FX motor controller, providing methods for motor control, configuration, and telemetry.',
+    parentClasses: [
+        {
+            name: "TalonFX, CoreTalonFX",
+            description: "WPILib-integrated version of CoreTalonFX."
+        }
+    ],
     methods: [
         {
             name: 'TalonFXMotor',

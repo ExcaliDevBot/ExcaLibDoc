@@ -2,6 +2,12 @@ export const sparkMaxMotorApi = {
     name: 'SparkMaxMotor',
     package: 'frc.excalib.control.motor.controllers',
     description: 'Implementation of the Motor interface using the Spark Max motor controller, providing methods for motor control, configuration, and telemetry.',
+    parentClasses: [
+        {
+            name: "Motor",
+            description: "base class for Spark Max motor controllers, providing common functionality for motor control."
+        }
+    ],
     methods: [
         {
             name: 'SparkMaxMotor',
