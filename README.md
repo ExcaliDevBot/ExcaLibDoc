@@ -1,5 +1,4 @@
-# Astro Starter Kit: Basics
-
+![Project Favicon](./public/excalib.png)
 ```sh
 npm create astro@latest -- --template basics
 ```
