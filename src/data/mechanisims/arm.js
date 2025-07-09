@@ -1,6 +1,6 @@
 export const arm = {
     "title": "Arm Mechanism",
-        "updated": "June 17, 2025",
+    updated: "2025-07-01",
         "introduction": "The Arm class in ExcaLib provides a flexible and extensible framework for controlling " +
             "rotating arms using PID and feedforward control. It is ideal for managing mechanisms like single-jointed arms," +
             " elevators with rotational pivots, and other similar systems. This page covers how to configure and use the Arm class effectively.",

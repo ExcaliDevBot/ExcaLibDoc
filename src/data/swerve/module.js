@@ -1,6 +1,6 @@
 export const SwerveModule = {
     title: "Swerve Module",
-    updated: "june 24, 2025",
+    updated: "2025-07-01",
     introduction: "The SwerveModule class represents a single module of a swerve drive system." +
         " Each module consists of a drive wheel for linear movement and a turret for rotation." +
         " This class handles velocity and angle control, state optimization, and provides SysId capabilities.",

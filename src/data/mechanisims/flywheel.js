@@ -1,6 +1,6 @@
 export const flywheel = {
     "title": "FlyWheel Mechanism",
-        "updated": "June 19, 2025",
+    updated: "2025-07-01",
         "introduction": "the flyWheel mechanism, provides advanced velocity control using both PID and feedforward. The class supports" +
             " dynamic velocity setpoints, acceleration and jerk constraints, and provides commands for precise and" +
             " dynamic flywheel speed regulation, making it suitable for applications requiring accurate and" +

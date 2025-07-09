@@ -1,6 +1,6 @@
 export const math = {
     title: "Math Utilities",
-    updated: "2025-06-25 21:00:00",
+    updated: "2025-07-01",
     introduction: "Efficient and precise mathematical operations geometry-related calculations are crucial for control applications." +
         " This class outlines the math utilities provided by the library.",
     sections: [

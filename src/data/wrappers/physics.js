@@ -1,5 +1,6 @@
 export const physics = {
     title: 'Physics Wrappers',
+    updated: "2025-07-01",
     "introduction": "ExcaLib provides a set of Physics Wrappers for various components.",
     sections: [
         {

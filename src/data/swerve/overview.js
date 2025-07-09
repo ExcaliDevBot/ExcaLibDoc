@@ -1,6 +1,6 @@
 export const SwerveOverview = {
     title: "Swerve Overview",
-    updated: "june 24, 2025",
+    updated: "2025-07-01",
     introduction: "The Swerve is one of ExcaLib's top features, providing a comprehensive set of tools" +
         "for building and controlling swerve drive robots in FRC. ExcaLib's swerve drive is designed to be" +
         "easy to use and highly customizable, allowing teams to focus on their robot's performance with minimal setup" +

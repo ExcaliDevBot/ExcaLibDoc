@@ -1,6 +1,6 @@
 export const turret = {
      "title": "Turret Mechanism",
-        "updated": "June 19, 2025",
+    updated: "2025-07-01",
         "introduction": "The Turret mechanism enables precise angular positioning using PID control, with support for" +
             " continuous input and rotational soft limits. The class allows dynamic setpoints, integrates position" +
             " feedback, and provides commands for accurate and responsive turret movement, making it ideal for" +

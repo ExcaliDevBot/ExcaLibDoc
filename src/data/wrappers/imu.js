@@ -1,5 +1,6 @@
 export const imu = {
     title: 'IMU Wrapper',
+    updated: "2025-07-01",
     sections: [
         {
             id: 'imu-overview',

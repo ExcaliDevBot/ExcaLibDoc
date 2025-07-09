@@ -1,6 +1,6 @@
 export const introduction = {
      title: "Introduction to ExcaLib",
-        updated: "17.06.2025",
+    updated: "2025-07-01",
         introduction: "ExcaLib is a comprehensive WpilibJ library designed to simplify robot development for FIRST Robotics Competition (FRC) teams. It provides pre-built mechanisms, custom swerve drive implementations, generic hardware wrappers and additional utilities to accelerate your robot development.",
         sections: [
             {

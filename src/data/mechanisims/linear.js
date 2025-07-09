@@ -1,6 +1,6 @@
 export const linear = {
     title: "Linear Mechanism",
-    updated: "June 20, 2025",
+    updated: "2025-07-01",
     introduction: "The Linear Mechanism class in ExcaLib is designed for controlling linear motion systems such as elevators or telescopic arms. It provides precise control, along with safety features like soft limits and motion profiling.",
     sections: [
         {

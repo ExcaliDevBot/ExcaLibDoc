@@ -1,6 +1,6 @@
 export const Swerve = {
     title: "Swerve Class",
-    updated: "July 1, 2025",
+    updated: "2025-07-01",
     introduction: "The Swerve class represents a complete swerve drive system." +
         " It manages multiple swerve modules, providing methods for driving, turning, and controlling the overall robot movement." +
         " This class is designed to work with the SwerveModule class, which represents individual swerve modules.",

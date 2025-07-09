@@ -1,5 +1,6 @@
 export const motors = {
     title: 'Motor Controllers',
+    updated: "2025-07-01",
     sections: [
         {
             id: 'motors-overview',

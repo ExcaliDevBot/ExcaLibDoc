@@ -1,5 +1,6 @@
 export const sysid = {
         title: 'SysId Overview',
+        updated: "2025-07-01",
         sections: [
             {
                 id: 'sysid-functions',

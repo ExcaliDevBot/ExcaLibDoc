@@ -1,6 +1,6 @@
 export const quickStart = {
      title: "Quick Start Guide",
-        updated: "January 17, 2025",
+    updated: "2025-07-01",
         introduction: "This guide will help you quickly set up a basic robot with ExcaLib, focusing on the most common components and features.",
         sections: [
             {

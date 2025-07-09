@@ -1,6 +1,6 @@
 export const overview = {
     title: "Mechanisms Overview",
-    updated: "January 20, 2025",
+    updated: "2025-07-01",
     introduction: "ExcaLib provides a comprehensive set of ready-to-use mechanism classes that can be easily adapted to your robot's specific needs." +
         " This page provides an overview of the available mechanisms and how to use them.",
     sections: [

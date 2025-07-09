@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 export let installation;
 installation = {
     title: "Installation",
-    updated: "January 12, 2025",
+    updated: "2025-07-01",
     introduction: "This guide will walk you through the process of adding ExcaLib to your robot project.",
     sections: [
         {

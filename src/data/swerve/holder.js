@@ -1,6 +1,6 @@
 export const SwerveHolder = {
     title: "Swerve Overview",
-    updated: "june 24, 2025",
+    updated: "2025-07-01",
     introduction: "A class that manages and coordinates the operation of four swerve drive modules " +
         "(front-left, front-right, back-left, back-right) for a swerve drive robot.",
     sections: [

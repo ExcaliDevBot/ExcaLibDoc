@@ -1,6 +1,6 @@
 export const gains = {
     title: "Gains",
-    updated: "june 24, 2025",
+    updated: "2025-07-01",
     introduction: "Working with gains is a common task in FRC, especially when tuning PID controllers or other control systems. Dealing with all these values can " +
         "be hard to bundle together, and make your code less readable. ExcaLib provides a simple way to manage gains using This class.",
     sections: [

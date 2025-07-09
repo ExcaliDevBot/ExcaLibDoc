@@ -1,6 +1,6 @@
 export const alliance = {
     title: "Alliance Utilities",
-    updated: "june 24, 2025",
+    updated: "2025-07-01",
     introduction: "While writing code for your robot, you may find yourself needing to depend on the alliance you are on. " +
         "Therefore, ExcaLib provides a simple utility to help you determine and use the alliance your robot.",
     sections: [

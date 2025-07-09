@@ -1,6 +1,6 @@
 export const softlimit = {
     title: "Soft Limits",
-    updated: "june 24, 2025",
+    updated: "2025-07-01",
     introduction: "Soft limits are used to prevent a motor from moving beyond a certain point. " +
         "This is useful for preventing damage to the robot or its components or to ensure that the robot operates within a safe range.",
     sections: [
